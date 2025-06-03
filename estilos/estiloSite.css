@@ -3,6 +3,7 @@ body {
     flex-direction: column;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
+    background-color: #1A1A1A;
 }
 
 .superiorHome {
@@ -22,45 +23,45 @@ body {
     justify-content: center;
     width: 38%;
     height: 50px;
-    background-color: rgb(255, 255, 255);
     font-size: 16px;
     font-weight: 500;
     margin: 0;
     padding: 0;
-    border: 1px solid rgba(0, 0, 0, 0.171);
+    border: 1px solid #8B0000	;
 }
 
 .barraNavegacao a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 90px;
+    width: 20%;
     height: 50px;
     margin: 0;
     padding: 0;
     line-height: 45px;
     text-decoration: none;
-    color: #0173BA;
+    color: #e50914c4;
 }
 
 #produtos, #servicos, #contato {
-    width: 110px;
+    width: 20%;
 }
 
 .barraNavegacao a:active {
-    background-color: #007236;
+    background-color: #8B0000;
     color: white;
 
 }
 
 .barraNavegacao a:hover:not(.active) {
-    background-color: #007236;
-    color: white;
+    background-color: #E50914;
+    color: #1A1A1A;
 }
 
 #logoEmpresa {
-    height: 50px;
-    margin-left: 10px;
+    height: 90px;
+    margin-top: 10px;
+    margin-left: 20px;
     flex: 0 0 auto;
 }
 
@@ -73,7 +74,7 @@ body {
     width: 25%;
     text-align: right;
     margin-right: 10px;
-    color: #0173BA;
+    color: #E50914;
     font-family: "Montserrat", Sans-serif;
     font-size: 14px;
 
@@ -83,18 +84,119 @@ body {
     width: 25%;
 }
 
-
-.barraSuperior {
+.barraSuperior2 {
     width: 100%;
-    height: 3px;
-    background-color: #FEF200;
+    height: 2px;
+    background-color: #E50914;
 }
+
+.barraInferior2 {
+    width: 100%;
+    height: 2px;
+    background-color: #E50914;
+    margin: 0;
+    padding: 0;
+}
+
 
 #imgTelefone {
     width: 30px;
     height: 30px;
 }
 
+#imgwpp {
+    width: 30px;
+    height: 30px;
+}
+
 #numeroTelefone {
     text-align: right;
+}
+
+#linkwpp {
+    width: 30px;
+    height: 30px;
+}
+
+.centroHome {
+    gap: 0;
+    margin: 20px;
+}
+
+.centroHome img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.1);
+    gap: 0;
+}
+
+.fundos {
+    width: 33%;
+    box-shadow: 0 5px 30px 0 rgba(255, 0, 0, 0.205);
+    border-radius: 4px;
+}
+
+.imagensInicio {
+    gap: 0;
+}
+
+.centroHome h2 {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.maisvendidos {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+    justify-content: center;
+}
+
+.produto {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 18%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgb(0, 0, 0);
+    transition: transform 0.2s;
+}
+
+.produto img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.nomeProduto {
+    margin-top: 14px;
+    color: black ;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.precoProduto {
+    color: black ;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.prazoEntrega {
+    margin-top: 4px;
+    color: black ;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.localizacao {
+    background-color: grey;
+    height: 300px;
+}
+
+.localizacao h2 {
+    margin: 0;
 }
