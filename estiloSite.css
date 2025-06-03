@@ -1,0 +1,100 @@
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+.superiorHome {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 125px;
+    margin: 0;
+    padding: 0;
+    gap: 100px;
+}
+
+.barraNavegacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38%;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    border: 1px solid rgba(0, 0, 0, 0.171);
+}
+
+.barraNavegacao a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    line-height: 45px;
+    text-decoration: none;
+    color: #0173BA;
+}
+
+#produtos, #servicos, #contato {
+    width: 110px;
+}
+
+.barraNavegacao a:active {
+    background-color: #007236;
+    color: white;
+
+}
+
+.barraNavegacao a:hover:not(.active) {
+    background-color: #007236;
+    color: white;
+}
+
+#logoEmpresa {
+    height: 50px;
+    margin-left: 10px;
+    flex: 0 0 auto;
+}
+
+.telefone {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap: 15px;
+    width: 25%;
+    text-align: right;
+    margin-right: 10px;
+    color: #0173BA;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 14px;
+
+}
+
+.logo {
+    width: 25%;
+}
+
+
+.barraSuperior {
+    width: 100%;
+    height: 3px;
+    background-color: #FEF200;
+}
+
+#imgTelefone {
+    width: 30px;
+    height: 30px;
+}
+
+#numeroTelefone {
+    text-align: right;
+}
