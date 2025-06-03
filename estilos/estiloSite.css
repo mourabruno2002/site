@@ -27,7 +27,7 @@ body {
     font-weight: 500;
     margin: 0;
     padding: 0;
-    border: 1px solid #8B0000	;
+    border: 1px solid #ffffff48	;
 }
 
 .barraNavegacao a {
@@ -40,7 +40,7 @@ body {
     padding: 0;
     line-height: 45px;
     text-decoration: none;
-    color: #e50914c4;
+    color: #ffffff;
 }
 
 #produtos, #servicos, #contato {
@@ -55,7 +55,6 @@ body {
 
 .barraNavegacao a:hover:not(.active) {
     background-color: #E50914;
-    color: #1A1A1A;
 }
 
 #logoEmpresa {
@@ -74,7 +73,7 @@ body {
     width: 25%;
     text-align: right;
     margin-right: 10px;
-    color: #E50914;
+    color: #ffffff;
     font-family: "Montserrat", Sans-serif;
     font-size: 14px;
 
