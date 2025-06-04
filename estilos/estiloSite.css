@@ -110,6 +110,7 @@ body {
 
 #numeroTelefone {
     text-align: right;
+    margin: 0;
 }
 
 #linkwpp {
@@ -120,6 +121,8 @@ body {
 .centroHome {
     gap: 0;
     margin: 20px;
+    margin-bottom: 100px;
+    
 }
 
 .centroHome img:hover {
@@ -136,7 +139,8 @@ body {
 }
 
 .imagensInicio {
-    gap: 0;
+    display: flex;
+    gap: 10px;
 }
 
 .centroHome h2 {
@@ -193,14 +197,44 @@ body {
 }
 
 .localizacao {
-    background-color: grey;
-    height: 300px;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    color: #ffffff;
+    border: 2px solid #E50914;
+    margin: 20px;
+}
+
+.localizacao p, h2 {
+    text-align: left;
+    color: #ffffff;
+    margin-left: 85px;
+    margin-top: 20px;
 }
 
 .localizacao h2 {
-    margin: 0;
+    margin-top: 40px;
+}
+
+.localizacao img {
+    width: 100%;
+}
+
+.imagemLocalizacao, .enderecoLocalizacao {
+    width: 50%;
 }
 
 .tituloSecao {
     color: #fab60d;
+}
+
+.inferiorHome {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background: linear-gradient(to top, #1A1A1A, #0d0d0d);
+}
+
+.pagamento {
+    
 }
