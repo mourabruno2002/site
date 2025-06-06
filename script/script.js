@@ -2,6 +2,9 @@ function abrirSaibaMais (figure) {
     let txt1 = document.getElementById("txt1");
     let txt2 = document.getElementById("txt2");
     let txt3 = document.getElementById("txt3");
+    let saibaMais = document.getElementById("saibaMais");
+    let produtos = document.getElementById(figure);
+    let produtosMov = produtos.getBoundingClientRect();
 
     switch (figure) {
         case "botaoLuffy":

@@ -347,3 +347,11 @@ h2 {
     text-align: center;
     border: 1px solid #E50914;
 }
+
+.produto {
+    position: relative;
+}
+
+.modal {
+    position: absolute;
+}
