@@ -21,20 +21,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 38%;
+    width: 33.33%;
     height: 50px;
     font-size: 16px;
     font-weight: 500;
     margin: 0;
     padding: 0;
-    border: 1px solid rgba(255, 255, 255, 0.28)	;
+    border: 1px solid rgba(255, 255, 255, 0.28);
 }
 
 .barraNavegacao a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 20%;
+    width: 25%;
     height: 50px;
     margin: 0;
     padding: 0;
@@ -43,8 +43,9 @@ body {
     color: #ffffff;
 }
 
-#produtos, #servicos, #contato {
-    width: 20%;
+#servicos,
+#contato {
+    width: 25%;
 }
 
 .barraNavegacao a.active {
@@ -59,7 +60,7 @@ body {
 #logoEmpresa {
     height: 90px;
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 4%;
     flex: 0 0 auto;
 }
 
@@ -69,7 +70,7 @@ body {
     justify-content: end;
     align-items: center;
     gap: 15px;
-    width: 25%;
+    width: 33.33%;
     text-align: right;
     color: #ffffff;
     font-family: "Montserrat", Sans-serif;
@@ -78,7 +79,7 @@ body {
 }
 
 .logo {
-    width: 25%;
+    width: 33.33%;
 }
 
 .barraSuperior2 {
@@ -109,6 +110,7 @@ body {
 #numeroTelefone {
     text-align: right;
     margin: 0;
+    margin-right: 5%;
 }
 
 #linkwpp {
@@ -118,9 +120,9 @@ body {
 
 .centroHome {
     gap: 0;
-    margin: 10px;
+    margin: 1%;
     margin-bottom: 100px;
-    
+
 }
 
 .centroHome img:hover {
@@ -131,14 +133,14 @@ body {
 }
 
 .fundos {
-    width: 33.33%;
+    width: 33%;
     box-shadow: 0 5px 30px 0 rgba(255, 0, 0, 0.205);
     border-radius: 4px;
 }
 
 .imagensInicio {
     display: flex;
-    gap: 5px;
+    gap: 0.5%;
 }
 
 .centroHome h2 {
@@ -204,7 +206,8 @@ body {
     border-top: none;
 }
 
-.localizacao p, h2 {
+.localizacao p,
+h2 {
     text-align: left;
     color: #ffffff;
     margin-left: 5%;
@@ -220,7 +223,8 @@ body {
     height: 85%;
 }
 
-.imagemLocalizacao, .enderecoLocalizacao {
+.imagemLocalizacao,
+.enderecoLocalizacao {
     width: 50%;
 }
 
@@ -246,7 +250,9 @@ body {
     border-left: none;
 }
 
-.cartaoPagamento, .outrasFormasPagamento, .cnpjEmail {
+.cartaoPagamento,
+.outrasFormasPagamento,
+.cnpjEmail {
     width: 33.33%;
 
 }
@@ -258,12 +264,16 @@ body {
     margin-left: 25%;
 }
 
-.cartaoPagamento p, .outrasFormasPagamento p {
+.cartaoPagamento p,
+.outrasFormasPagamento p {
     margin-bottom: 12px;
 }
 
 
-.elo, .mastercard, .visa, .amex {
+.elo,
+.mastercard,
+.visa,
+.amex {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -278,20 +288,22 @@ body {
     margin-left: 20px;
 }
 
-.mastercard img, .visa img {
+.mastercard img,
+.visa img {
     width: 40px;
     height: 20px;
     margin-left: 20px;
 }
 
-.amex img  {
+.amex img {
     width: 25px;
     height: 20px;
     padding: 8px;
     margin-left: 18px;
 }
 
-.boleto, .deposito {
+.boleto,
+.deposito {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -304,7 +316,8 @@ body {
     margin-top: 60px;
 }
 
-.boleto img, .deposito img {
+.boleto img,
+.deposito img {
     width: 40px;
     height: 20px;
     margin-left: 20px;
@@ -318,5 +331,19 @@ body {
     width: 100%;
     background-color: #fab60d;
     margin-top: 10px;
+    cursor: pointer;
 
+}
+
+#saibaMais {
+    display: none;
+    background-color: #222;
+    color: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    border: 1px solid #E50914;
 }
