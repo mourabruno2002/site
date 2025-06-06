@@ -313,3 +313,10 @@ body {
 .cnpjEmail {
     margin-top: 25px;
 }
+
+.botaoSaibaMais {
+    width: 100%;
+    background-color: #fab60d;
+    margin-top: 10px;
+
+}
