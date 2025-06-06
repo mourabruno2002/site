@@ -71,7 +71,6 @@ body {
     gap: 15px;
     width: 25%;
     text-align: right;
-    margin-right: 10px;
     color: #ffffff;
     font-family: "Montserrat", Sans-serif;
     font-size: 14px;
@@ -110,7 +109,6 @@ body {
 #numeroTelefone {
     text-align: right;
     margin: 0;
-    margin-right: 10px;
 }
 
 #linkwpp {
@@ -133,7 +131,7 @@ body {
 }
 
 .fundos {
-    width: 33%;
+    width: 33.33%;
     box-shadow: 0 5px 30px 0 rgba(255, 0, 0, 0.205);
     border-radius: 4px;
 }
@@ -209,12 +207,12 @@ body {
 .localizacao p, h2 {
     text-align: left;
     color: #ffffff;
-    margin-left: 85px;
+    margin-left: 5%;
     margin-top: 20px;
 }
 
 .localizacao h2 {
-    margin-top: 10px;
+    margin-top: 5%;
 }
 
 .localizacao img {
@@ -248,35 +246,70 @@ body {
     border-left: none;
 }
 
-.descricaoPagamento {
-    width: 50%;
+.cartaoPagamento, .outrasFormasPagamento, .cnpjEmail {
+    width: 33.33%;
+
 }
 
-.descricaoPagamento h2 {
-    text-align: center;
+.cartaoPagamento h2 {
+    width: 200%;
     margin: 0;
-    margin-top: 10px;
+    margin-top: 7%;
+    margin-left: 25%;
 }
 
-.descricaoPagamento p {
+.cartaoPagamento p, .outrasFormasPagamento p {
     margin-bottom: 12px;
 }
+
 
 .elo, .mastercard, .visa, .amex {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
+    margin-top: 10px;
+    height: 32px;
+}
+
+.elo img {
+    width: 43px;
+    height: 18px;
     margin-left: 20px;
 }
 
-.elo img, .mastercard img, .visa img {
+.mastercard img, .visa img {
     width: 40px;
     height: 20px;
+    margin-left: 20px;
 }
 
 .amex img  {
     width: 25px;
     height: 20px;
     padding: 8px;
+    margin-left: 18px;
+}
+
+.boleto, .deposito {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    height: 32px;
+}
+
+.boleto {
+    margin-top: 60px;
+}
+
+.boleto img, .deposito img {
+    width: 40px;
+    height: 20px;
+    margin-left: 20px;
+}
+
+.cnpjEmail {
+    margin-top: 25px;
 }
