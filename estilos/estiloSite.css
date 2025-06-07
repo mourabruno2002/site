@@ -329,10 +329,14 @@ h2 {
 
 .botaoSaibaMais {
     width: 100%;
+    height: 30px;
     background-color: #fab60d;
     margin-top: 10px;
     cursor: pointer;
-
+    border: none;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 #saibaMais {
@@ -341,11 +345,11 @@ h2 {
     color: #fff;
     margin: 20px auto;
     padding: 20px;
-    width: 50%;
+    width: 20%;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    text-align: center;
-    border: 1px solid #E50914;
+    text-align: justify;
+    border: 2px solid #E50914;
 }
 
 .produto {
@@ -354,4 +358,19 @@ h2 {
 
 .modal {
     position: absolute;
+    top: 130%;
+    left: 39%;
+}
+
+#fecharBotaoSaibaMais {
+    cursor: pointer;
+    position: absolute;
+    top: 3%;
+    left: 90%;
+    background-color: #E50914;
+    width: 35px;
+    padding: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
 }
