@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -6,7 +10,7 @@ body {
     background-color: #1A1A1A;
 }
 
-.superiorHome {
+.superiorPagina {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -118,50 +122,79 @@ body {
     height: 30px;
 }
 
-.centroHome {
-    gap: 0;
+.centroPagina {
     margin: 1%;
     margin-bottom: 100px;
-
 }
 
-.centroHome img:hover {
+.maisVendidos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0;
+    margin: 1%;
+    margin-bottom: 0;
+}
+
+.maisVendidos img:hover, .imagensInicio img:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     filter: brightness(1.1);
     gap: 0;
 }
 
-.fundos {
-    width: 33%;
-    box-shadow: 0 5px 30px 0 rgba(255, 0, 0, 0.205);
-    border-radius: 4px;
-}
-
-.imagensInicio {
-    display: flex;
-    gap: 0.5%;
-}
-
-.centroHome h2 {
+.tituloSecao {
     margin-top: 100px;
     margin-bottom: 50px;
     text-align: center;
 }
 
-.maisvendidos {
+.imagensInicio {
+    display: flex;
+    width: 100%;
+    gap: 0.5%;
+}
+
+.imagensInicio img {
+    width: 33%;
+    box-shadow: 0 0 10px #ff000069;
+    border: none;
+}
+
+.historia {
+    display: block;
+    text-align: justify;
+    margin-left: 25%;
+    margin-right: 25%;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.historia h2 {
+    text-align: center;
+    margin-left: 0;
+    color: #fab60d;
+}
+
+.historia img {
+    width: 50%;
+    border: 1px solid #E50914;
+    margin-left: 25%;
+}
+
+.maisVendidos {
     display: flex;
     flex-direction: row;
     width: 100%;
-    gap: 20px;
+    gap: 2%;
     justify-content: center;
 }
 
 .produto {
-    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 18%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -232,7 +265,7 @@ h2 {
     color: #fab60d;
 }
 
-.inferiorHome {
+.inferiorPagina {
     display: flex;
     flex-direction: row;
     width: 100%;
