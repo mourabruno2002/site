@@ -170,10 +170,11 @@ body {
     color: #ffffff;
 }
 
-.historia h2 {
+.centroPagina h2 {
     text-align: center;
     margin-left: 0;
     color: #fab60d;
+    font-size: 30px;
 }
 
 .historia img {
