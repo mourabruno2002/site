@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -6,7 +10,7 @@ body {
     background-color: #1A1A1A;
 }
 
-.superiorHome {
+.superiorPagina {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -118,50 +122,79 @@ body {
     height: 30px;
 }
 
-.centroHome {
-    gap: 0;
+.centroPagina {
     margin: 1%;
     margin-bottom: 100px;
-
 }
 
-.centroHome img:hover {
+.maisVendidos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0;
+    margin: 1%;
+    margin-bottom: 0;
+}
+
+.maisVendidos img:hover, .imagensInicio img:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     filter: brightness(1.1);
     gap: 0;
 }
 
-.fundos {
-    width: 33%;
-    box-shadow: 0 5px 30px 0 rgba(255, 0, 0, 0.205);
-    border-radius: 4px;
-}
-
-.imagensInicio {
-    display: flex;
-    gap: 0.5%;
-}
-
-.centroHome h2 {
+.tituloSecao {
     margin-top: 100px;
     margin-bottom: 50px;
     text-align: center;
 }
 
-.maisvendidos {
+.imagensInicio {
+    display: flex;
+    width: 100%;
+    gap: 0.5%;
+}
+
+.imagensInicio img {
+    width: 33%;
+    box-shadow: 0 0 10px #ff000069;
+    border: none;
+}
+
+.historia {
+    display: block;
+    text-align: justify;
+    margin-left: 25%;
+    margin-right: 25%;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.historia h2 {
+    text-align: center;
+    margin-left: 0;
+    color: #fab60d;
+}
+
+.historia img {
+    width: 50%;
+    border: 1px solid #E50914;
+    margin-left: 25%;
+}
+
+.maisVendidos {
     display: flex;
     flex-direction: row;
     width: 100%;
-    gap: 20px;
+    gap: 2%;
     justify-content: center;
 }
 
 .produto {
-    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 18%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -232,7 +265,7 @@ h2 {
     color: #fab60d;
 }
 
-.inferiorHome {
+.inferiorPagina {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -329,10 +362,14 @@ h2 {
 
 .botaoSaibaMais {
     width: 100%;
+    height: 30px;
     background-color: #fab60d;
     margin-top: 10px;
     cursor: pointer;
-
+    border: none;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 #saibaMais {
@@ -341,11 +378,11 @@ h2 {
     color: #fff;
     margin: 20px auto;
     padding: 20px;
-    width: 50%;
+    width: 20%;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    text-align: center;
-    border: 1px solid #E50914;
+    text-align: justify;
+    border: 2px solid #E50914;
 }
 
 .produto {
@@ -354,4 +391,38 @@ h2 {
 
 .modal {
     position: absolute;
+    top: 130%;
+    left: 39.9%;
 }
+
+#fecharBotaoSaibaMais {
+    cursor: pointer;
+    position: absolute;
+    top: 3%;
+    left: 90%;
+    background-color: #E50914;
+    width: 35px;
+    padding: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.publi {
+    display: flex;
+    margin: 0;
+}
+
+.publi img {
+    width: 35%;
+    margin: 20px;
+}
+
+.dataPubli {
+    margin-top: 0;
+    margin-bottom: 50px;
+    color: #fab60d;
+    font-style: italic;
+    font-size: 14px;
+}
+

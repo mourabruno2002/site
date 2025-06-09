@@ -6,24 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/estiloSite.css">
     <link rel="icon" type="image/png" href="imagens/logoprincipal.png">
-    <title>Action Figure</title>
+    <title>Action Figures - Home</title>
 </head>
 
 <body>
     <div class="barraSuperior1"></div>
     <div class="barraSuperior2"></div>
 
-    <div class="superiorHome">
+    <div class="superiorPagina">
         <div class="logo">
-            <a href="site.html">
+            <a href="index.html">
                 <img id="logoEmpresa" src="imagens/logoprincipal.png" alt="Logo Figures Brasil">
             </a>
         </div>
 
         <div class="barraNavegacao">
-            <a class="active" href="site.html">Home</a>
+            <a class="active" href="index.html">Home</a>
             <a href="sobre.html">Sobre</a>
-            <a href="servicos.html" id="servicos">Serviços</a>
+            <a href="noticias.html" id="noticias">Notícias</a>
             <a href="contato.html" id="contato">Contato</a>
         </div>
 
@@ -37,15 +37,41 @@
 
     </div>
 
-    <div class="centroHome">
+    <div class="centroPagina">
         <div class="imagensInicio">
-            <img class="fundos" id="figures" src="imagens/fundo dc.png" alt="Action Figures">
+            <img src="imagens/fundo dc.png" alt="Action Figures">
             <img class="fundos" src="imagens/camisetas.png" alt="Camisetas Personalizadas">
             <img class="fundos" id="chaveiros" src="imagens/personalizados.png" alt="Chaveiros Personalizados">
         </div>
 
         <h2 class="tituloSecao">PRODUTOS MAIS VENDIDOS:</h2>
-        <div class="maisvendidos">
+        <div class="maisVendidos">
+            <div class="produto">
+                <img id="fotoluffy" src="imagens/luffy.png" alt="Figure Luffy">
+                <div class="nomeProduto">LUFFY ONE PIECE</div>
+                <div class="precoProduto">R$ 499,90</div>
+                <div class="prazoEntrega">A pronta entrega</div>
+                <input class="botaoSaibaMais" type="button" value="Saiba Mais" id="botaoLuffy">
+            </div>
+
+            <div class="produto">
+                <img id="fotobatman" src="imagens/batman.png" alt="Figure Batman">
+                <div class="nomeProduto">BATMAN ARKAM KNIGH</div>
+                <div class="precoProduto">R$ 299,90</div>
+                <div class="prazoEntrega">A pronta entrega</div>
+                <input class="botaoSaibaMais" type="button" value="Saiba Mais" id="botaoBatman">
+            </div>
+
+            <div class="produto">
+                <img id="fotohomemferro" src="imagens/homemferro.png" alt="Figure Ironman">
+                <div class="nomeProduto">IRON MAN MARK 85</div>
+                <div class="precoProduto">R$ 799,90</div>
+                <div class="prazoEntrega">A pronta entrega</div>
+                <input class="botaoSaibaMais" type="button" value="Saiba Mais" id="botaoIronMan">
+            </div>
+        </div>
+
+        <div class="maisVendidos">
             <div class="produto">
                 <img id="fotoluffy" src="imagens/luffy.png" alt="Figure Luffy">
                 <div class="nomeProduto">LUFFY ONE PIECE</div>
@@ -75,7 +101,7 @@
     <div class="barraInferior1"></div>
     <div class="barraInferior2"></div>
 
-    <div class="inferiorHome">
+    <div class="inferiorPagina">
 
         <div class="localizacao">
 
@@ -139,15 +165,13 @@
                 <p>E-mail:</p>
                 <p>actionfigure@acfigure.com.br</p>
             </div>
-
-
         </div>
     </div>
 
     <div id="saibaMais" class="modal">
-        <header>
-            <span id="fecharBotaoSaibaMais" class="botaoFechar">x</span>
-        </header>
+        <div class="botaoFechar">
+            <span id="fecharBotaoSaibaMais">X</span>
+        </div>
         <div>
             <p id="txt1" class="infoH"></p>
             <p id="txt2" class="info"></p>
