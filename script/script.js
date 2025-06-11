@@ -84,8 +84,27 @@ function mascaraTelefone (event) {
     }
 }
 
-function getParameters () {
-    
+function getParametros () {
+    let parametros;
+    let parametrosRet = {};
+    let url = window.location.href;
+    let parametrosInicio = url.indexOf("?");
+
+    if (parametrosInicio != -1) {
+        let parametrosString = url.substring(parametrosInicio + 1);
+        parametrosString = decodeURIComponent(parametrosString);
+
+        parametros = parametrosString.split("&");
+        for (let i = 0; i < parametros.length; i++) {
+            let parArray = parametros[i].split("=");
+            if (parArray.length == 2) {
+                parametrosRet[parArray[0]] = parArray[1];
+            }
+        }
+        return parametrosRet;
+    }
+
+    return null;
 }
 
 document.addEventListener('DOMContentLoaded', function () {
