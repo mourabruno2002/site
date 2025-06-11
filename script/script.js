@@ -84,28 +84,57 @@ function mascaraTelefone (event) {
     }
 }
 
-function getParametros () {
-    let parametros;
-    let parametrosRet = {};
+function getParametros() {
+    let parametros = {};
     let url = window.location.href;
     let parametrosInicio = url.indexOf("?");
 
-    if (parametrosInicio != -1) {
+    if (parametrosInicio !== -1) {
         let parametrosString = url.substring(parametrosInicio + 1);
         parametrosString = decodeURIComponent(parametrosString);
+        let pares = parametrosString.split("&");
 
-        parametros = parametrosString.split("&");
-        for (let i = 0; i < parametros.length; i++) {
-            let parArray = parametros[i].split("=");
-            if (parArray.length == 2) {
-                parametrosRet[parArray[0]] = parArray[1];
+        for (let i = 0; i < pares.length; i++) {
+            let parArray = pares[i].split("=");
+            if (parArray.length === 2) {
+                parametros[parArray[0]] = parArray[1].replace(/\+/g, ' ');
             }
         }
-        return parametrosRet;
     }
 
-    return null;
+    return parametros;
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    if (window.location.pathname.includes("contatoAction.html")) {
+        const dados = getParametros();
+        const resultado = document.getElementById("resultado");
+
+        if (dados && Object.keys(dados).length > 0) {
+            const table = document.createElement("table");
+            table.className = "tabela-dados";
+
+            for (const chave in dados) {
+                const row = document.createElement("tr");
+
+                const cellLabel = document.createElement("td");
+                cellLabel.textContent = chave.charAt(0).toUpperCase() + chave.slice(1);
+                cellLabel.className = "label";
+
+                const cellValue = document.createElement("td");
+                cellValue.textContent = dados[chave];
+
+                row.appendChild(cellLabel);
+                row.appendChild(cellValue);
+                table.appendChild(row);
+            }
+
+            resultado.appendChild(table);
+        } else {
+            resultado.textContent = "Nenhum dado recebido.";
+        }
+    }
+});
 
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('celular').addEventListener('keydown', mascaraTelefone);
