@@ -427,3 +427,41 @@ h2 {
     font-size: 14px;
 }
 
+.tabelaResultado {
+    margin: 20px auto;
+    border-collapse: collapse;
+    color: white;
+}
+
+.tabelaResultado td {
+    border: 1px solid #E50914;
+    padding: 8px 16px;
+}
+
+.tabelaResultado .label {
+    font-weight: bold;
+    background-color: #222;
+}
+
+.botaoRetornar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 150px;
+    height: 30px;
+    background-color: #fab60d;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0;
+    color: #8B0000;
+}
+
+.botaoRetorno {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

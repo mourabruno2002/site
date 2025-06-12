@@ -1,103 +1,74 @@
-function abrirSaibaMais (figure) {
-    let txt1 = document.getElementById("txt1");
-    let txt2 = document.getElementById("txt2");
-    let txt3 = document.getElementById("txt3");
-    let saibaMais = document.getElementById("saibaMais");
-    let produtos = document.getElementById(figure);
-    let produtosMov = produtos.getBoundingClientRect();
+function abrirSaibaMais(botaoId) {
+    const tituloProduto = document.getElementById("txt1");
+    const descricaoProduto = document.getElementById("txt2");
+    const precoProduto = document.getElementById("txt3");
 
-    switch (figure) {
+    switch (botaoId) {
         case "botaoLuffy":
-            txt1.innerHTML = "Monk D. Luffy - One Piece Film: Z";
-            txt2.innerHTML = "Action figure de 20cm inspirada no filme One Piece, de 2012. Feita em PVC de alta qualidade, com braços e pernas articulados. ";
-            txt3.innerHTML = "R$ 499,90";
+            tituloProduto.innerHTML = "Monk D. Luffy - One Piece Film: Z";
+            descricaoProduto.innerHTML = "Action figure de 20cm inspirada no filme One Piece, de 2012. Feita em PVC de alta qualidade, com braços e pernas articulados.";
+            precoProduto.innerHTML = "R$ 499,90";
             break;
 
         case "botaoBatman":
-            txt1.innerHTML = "Batman - Edição Clássica 1989";
-            txt2.innerHTML = "Action figure de 15cm inspirada no visual classico do Cavaleiro das Trevas. Feita em PVC de alta qualidade, com braços e pernas articulados. ";
-            txt3.innerHTML = "R$ 299,90";
+            tituloProduto.innerHTML = "Batman - Edição Clássica 1989";
+            descricaoProduto.innerHTML = "Action figure de 15cm inspirada no visual clássico do Cavaleiro das Trevas. Feita em PVC de alta qualidade, com braços e pernas articulados.";
+            precoProduto.innerHTML = "R$ 299,90";
             break;
 
         case "botaoIronMan":
-            txt1.innerHTML = "Homem de Ferro - Armadura Mark 85";
-            txt2.innerHTML = "Action figure de 20cm inspirada na armadura utilizada por Tony Stark em Vingadores: Ultimato. Altamente detalhada, com braços e pernas articulados. ";
-            txt3.innerHTML = "R$ 799,90";
+            tituloProduto.innerHTML = "Homem de Ferro - Armadura Mark 85";
+            descricaoProduto.innerHTML = "Action figure de 20cm inspirada na armadura utilizada por Tony Stark em Vingadores: Ultimato. Altamente detalhada, com braços e pernas articulados.";
+            precoProduto.innerHTML = "R$ 799,90";
             break;
 
         default:
-            txt1.innerHTML = "";
-            txt2.innerHTML = "";
-            txt3.innerHTML = "";
+            tituloProduto.innerHTML = "";
+            descricaoProduto.innerHTML = "";
+            precoProduto.innerHTML = "";
     }
 
     document.getElementById("saibaMais").style.display = "inline-block";
-
 }
 
 function fecharSaibaMais() {
-    document.getElementById("saibaMais").style.display = 'none';
+    document.getElementById("saibaMais").style.display = "none";
 }
 
-document.getElementById("fecharBotaoSaibaMais").addEventListener("click", function () {
-    fecharSaibaMais("saibaMais");
-})
+function aplicarMascaraTelefone(evento) {
+    let numero = evento.target.value.replace(/\D+/g, "");
+    let tamanho = numero.length;
 
-document.getElementById("botaoLuffy").addEventListener("click", function () {
-    abrirSaibaMais("botaoLuffy");
-});
-
-document.getElementById("botaoBatman").addEventListener("click", function () {
-    abrirSaibaMais("botaoBatman");
-});
-
-document.getElementById("botaoIronMan").addEventListener("click", function () {
-    abrirSaibaMais("botaoIronMan");
-});
-
-function mascaraTelefone (event) {
-    let tecla = event.key;
-    let telefone = event.target.value.replace(/\D+/g, "");
-
-    if (/^[0-9]$/i.test(tecla)) {
-        telefone = telefone + tecla;
-        let tamanho = telefone.length;
-        if (tamanho >= 12) {
-            return false;
-        }
-
-        if (tamanho > 10) {
-            telefone = telefone.replace(/^(\d\d)(\d{5})(\d{4}).*/, "($1) $2-$3");
-        } else if (tamanho > 5) {
-            telefone = telefone.replace(/^(\d\d)(\d{4})(\d{0,4}).*/, "($1) $2-$3");
-        } else if(tamanho > 2) {
-            telefone = telefone.replace(/^(\d\d)(\d{0,5})/, "($1) $2");
-        } else {
-            telefone = telefone.replace(/^(\d*)/, "($1");
-        }
-
-        event.target.value = telefone;
+    if (tamanho > 11) {
+        numero = numero.slice(0, 11);
     }
 
-    if (!["Backspace", "Delete", "Tab"].includes(tecla)) {
-        return false;
+    if (tamanho > 10) {
+        numero = numero.replace(/^(\d\d)(\d{5})(\d{4}).*/, "($1) $2-$3");
+    } else if (tamanho > 5) {
+        numero = numero.replace(/^(\d\d)(\d{4})(\d{0,4}).*/, "($1) $2-$3");
+    } else if (tamanho > 2) {
+        numero = numero.replace(/^(\d\d)(\d{0,5})/, "($1) $2");
+    } else {
+        numero = numero.replace(/^(\d*)/, "($1");
     }
+
+    evento.target.value = numero;
 }
 
-function getParametros() {
-    let parametros = {};
-    let url = window.location.href;
-    let parametrosInicio = url.indexOf("?");
+function obterParametrosUrl() {
+    const parametros = {};
+    const url = window.location.href;
+    const inicio = url.indexOf("?");
 
-    if (parametrosInicio !== -1) {
-        let parametrosString = url.substring(parametrosInicio + 1);
-        parametrosString = decodeURIComponent(parametrosString);
-        let pares = parametrosString.split("&");
+    if (inicio !== -1) {
+        const queryString = decodeURIComponent(url.substring(inicio + 1));
+        const pares = queryString.split("&");
 
         for (let i = 0; i < pares.length; i++) {
-            let parArray = pares[i].split("=");
-            if (parArray.length === 2) {
-                parametros[parArray[0]] = parArray[1].replace(/\+/g, ' ');
+            const [chave, valor] = pares[i].split("=");
+            if (chave && valor) {
+                parametros[chave] = valor.replace(/\+/g, " ");
             }
         }
     }
@@ -106,36 +77,80 @@ function getParametros() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    const botaoFecharModal = document.getElementById("fecharBotaoSaibaMais");
+    const botaoLuffy = document.getElementById("botaoLuffy");
+    const botaoBatman = document.getElementById("botaoBatman");
+    const botaoIronMan = document.getElementById("botaoIronMan");
+    const campoTelefone = document.getElementById("celular");
+    const botaoVoltar = document.getElementById("botaoRetornar");
+
+    if (botaoFecharModal) {
+        botaoFecharModal.addEventListener("click", fecharSaibaMais);
+    }
+
+    if (botaoLuffy) {
+        botaoLuffy.addEventListener("click", () => abrirSaibaMais("botaoLuffy"));
+    }
+
+    if (botaoBatman) {
+        botaoBatman.addEventListener("click", () => abrirSaibaMais("botaoBatman"));
+    }
+
+    if (botaoIronMan) {
+        botaoIronMan.addEventListener("click", () => abrirSaibaMais("botaoIronMan"));
+    }
+
+    if (campoTelefone) {
+        campoTelefone.addEventListener("input", aplicarMascaraTelefone);
+    }
+
+    if (botaoVoltar) {
+        botaoVoltar.addEventListener("click", () => {
+            window.location.href = "contato.html";
+        });
+    }
+
     if (window.location.pathname.includes("contatoAction.html")) {
-        const dados = getParametros();
-        const resultado = document.getElementById("resultado");
+        const parametrosForm = obterParametrosUrl();
+        const areaResultado = document.getElementById("dadosTabela");
 
-        if (dados && Object.keys(dados).length > 0) {
-            const table = document.createElement("table");
-            table.className = "tabela-dados";
+        if (parametrosForm && Object.keys(parametrosForm).length > 0) {
+            const tabelaResultado = document.createElement("table");
+            tabelaResultado.className = "tabelaResultado";
 
-            for (const chave in dados) {
-                const row = document.createElement("tr");
+            const nomesFormatados = {
+                name: "Nome",
+                email: "E-mail",
+                celular: "Celular",
+                dataNasc: "Data de Nascimento",
+                termoAceite: "Termo de Aceite"
+            };
 
-                const cellLabel = document.createElement("td");
-                cellLabel.textContent = chave.charAt(0).toUpperCase() + chave.slice(1);
-                cellLabel.className = "label";
+            for (const campo in parametrosForm) {
+                const linha = document.createElement("tr");
 
-                const cellValue = document.createElement("td");
-                cellValue.textContent = dados[chave];
+                const celulaNomeCampo = document.createElement("td");
+                celulaNomeCampo.textContent = nomesFormatados[campo] || campo;
+                celulaNomeCampo.className = "label";
 
-                row.appendChild(cellLabel);
-                row.appendChild(cellValue);
-                table.appendChild(row);
+                const celulaValorCampo = document.createElement("td");
+                let valor = parametrosForm[campo];
+
+                if (campo === "dataNasc" && valor) {
+                    const [ano, mes, dia] = valor.split("-");
+                    valor = `${dia}/${mes}/${ano}`;
+                }
+
+                celulaValorCampo.textContent = valor;
+
+                linha.appendChild(celulaNomeCampo);
+                linha.appendChild(celulaValorCampo);
+                tabelaResultado.appendChild(linha);
             }
 
-            resultado.appendChild(table);
+            areaResultado.appendChild(tabelaResultado);
         } else {
-            resultado.textContent = "Nenhum dado recebido.";
+            areaResultado.innerHTML = "<p style='color: white;'>Nenhum dado recebido.</p>";
         }
     }
 });
-
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('celular').addEventListener('keydown', mascaraTelefone);
-})
