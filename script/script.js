@@ -149,8 +149,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             areaResultado.appendChild(tabelaResultado);
-        } else {
-            areaResultado.innerHTML = "<p style='color: white;'>Nenhum dado recebido.</p>";
         }
     }
 });
