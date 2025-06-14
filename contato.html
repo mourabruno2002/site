@@ -39,18 +39,21 @@
     <div class="centroPagina">
         <h2>Deixe seu Contato!</h2>
         <div class="formContato">
-            <form method="get" action="contatoAction.html">
+            <form class="formPrincipal" method="get" action="contatoAction.html">
                 <div class="formGrupo">
+                    <img src="imagens/nomeContato.png" alt="Ícone Nome do Contato">
                     <label for="name"><i class="formNome" aria-hidden="true"></i></label>
                     <input type="text" name="name" id="name" placeholder="Seu Nome..." required>
                 </div>
 
                 <div class="formGrupo">
+                    <img src="imagens/emailContato.png" alt="Ícone E-mail Contato">
                     <label for="email"><i class="formEmail" aria-hidden="true"></i></label>
-                    <input type="email" name="email" id="email" placeholder="Seu e-mail..." required>
+                    <input type="email" name="email" id="email" placeholder="Seu E-mail..." required>
                 </div>
 
                 <div class="formGrupo">
+                    <img src="imagens/telefoneContato.png" alt="Ícone Telefone Contato">
                     <label for="celular"><i class="formCelular" aria-hidden="true"></i></label>
                     <input type="phone" name="celular" id="celular" pattern="\(\d{2})\s\d{4,5}-\d{4}$"
                         onkeydown="return mascaraTelefone(event)" placeholder="Seu Celular..." title="(xx) xxxxx-xxxx"
@@ -58,13 +61,14 @@
                 </div>
 
                 <div class="formGrupo">
+                    <img src="imagens/dataContato.png" alt="Ícone Data Nascimento">
                     <label for="dataNasc"><i class="formDataNasc" aria-hidden="true"></i></label>
                     <input type="date" name="dataNasc" id="dataNasc" title="Data de Nascimento">
                 </div>
 
                 <div class="formGrupo">
                     <input type="checkbox" name="termoAceite" id="termoAceite" class="termoAceite" required>
-                    <label for="termoAceite" class = "labelTermoAceite"><span><span></span></span>Eu concordo com os <a href="#" class="termoServico">termos de serviço</a></label>
+                    <label for="termoAceite" class = "labelTermoAceite"><span><span></span></span>Eu concordo com os <a href="#" class="termoServico">termos de serviço</a>.</label>
                 </div>
                 
                 <div class="formGrupo formBotao">

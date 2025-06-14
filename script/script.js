@@ -22,6 +22,24 @@ function abrirSaibaMais(botaoId) {
             precoProduto.innerHTML = "R$ 799,90";
             break;
 
+        case "botaoCanecaLuffy":
+            tituloProduto.innerHTML = "Caneca Personalizada - Monk D. Luffy";
+            descricaoProduto.innerHTML = "Caneca de cerâmica personalizável com estampa de Monkey D. Luffy. Um excelente presente para fãs de anime. ";
+            precoProduto.innerHTML = "R$ 89,90";
+            break;
+
+        case "botaoFlash":
+            tituloProduto.innerHTML = "Camiseta Personalizada - Flash";
+            descricaoProduto.innerHTML = "Camiseta unissex em algodão com estampa do herói Flash. Confortável, com impressão de alta qualidade e disponível em diversos tamanhos.";
+            precoProduto.innerHTML = "R$ 109,90";
+            break;
+
+        case "botaoGojo":
+            tituloProduto.innerHTML = "Chaveiro Personalizado - Satoru Gojo";
+            descricaoProduto.innerHTML = "Chaveiro personalizável com arte do personagem Satoru Gojo, de Jujutsu Kaisen. Leve e resistente, ideal para mochilas, chaves ou decoração.";
+            precoProduto.innerHTML = "R$ 29,90";
+            break;    
+
         default:
             tituloProduto.innerHTML = "";
             descricaoProduto.innerHTML = "";
@@ -81,6 +99,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const botaoLuffy = document.getElementById("botaoLuffy");
     const botaoBatman = document.getElementById("botaoBatman");
     const botaoIronMan = document.getElementById("botaoIronMan");
+    const botaoCanecaLuffy = document.getElementById("botaoCanecaLuffy");
+    const botaoFlash = document.getElementById("botaoFlash");
+    const botaoGojo = document.getElementById("botaoGojo");
     const campoTelefone = document.getElementById("celular");
     const botaoVoltar = document.getElementById("botaoRetornar");
 
@@ -98,6 +119,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (botaoIronMan) {
         botaoIronMan.addEventListener("click", () => abrirSaibaMais("botaoIronMan"));
+    }
+
+    if (botaoCanecaLuffy) {
+        botaoCanecaLuffy.addEventListener("click", () => abrirSaibaMais("botaoCanecaLuffy"));
+    }
+
+    if (botaoFlash) {
+        botaoFlash.addEventListener("click", () => abrirSaibaMais("botaoFlash"));
+    }
+
+    if (botaoGojo) {
+        botaoGojo.addEventListener("click", () => abrirSaibaMais("botaoGojo"));
     }
 
     if (campoTelefone) {

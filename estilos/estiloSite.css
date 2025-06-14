@@ -111,6 +111,10 @@ body {
     height: 30px;
 }
 
+#imgwpp:hover {
+    transform: scale(1.30);
+}
+
 #numeroTelefone {
     text-align: right;
     margin: 0;
@@ -363,8 +367,9 @@ h2 {
 
 .botaoSaibaMais {
     width: 100%;
-    height: 30px;
+    height: 32px;
     background-color: #fab60d;
+    color: #1A1A1A;
     margin-top: 10px;
     cursor: pointer;
     border: none;
@@ -449,19 +454,86 @@ h2 {
     justify-content: center;
     text-decoration: none;
     width: 150px;
-    height: 30px;
-    background-color: #fab60d;
+    height: 35px;
+    background-color: #E50914;
     cursor: pointer;
-    border: none;
-    border-radius: 8px;
+    border: 1px solid #E50914;
+    border-radius: 4px;
     text-transform: uppercase;
     font-weight: 600;
     padding: 0;
-    color: #8B0000;
+    color: #ffffffdc;
 }
+
+.botaoRetornar:hover {
+    background-color: #8B0000;
+}
+
 
 .botaoRetorno {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.formPrincipal {
+    background-color: #121212;
+    width: 28%;
+}
+
+.formContato {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+input {
+    background-color: #121212;
+    border: none;
+    border-bottom: 2px solid #E50914;
+    width: 100%;
+    font-size: 16px;
+    color: #ffffffdc;
+}
+
+.termoAceite {
+    width: 5%;
+}
+
+.labelTermoAceite {
+    margin-left: 10px;
+    color: #ffffffdc;
+}
+
+.termoServico {
+    color: blue;
+}
+
+input::placeholder {
+    color: #ffffffdc;
+}
+
+.formGrupo {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+.formGrupo img {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.formSubmit {
+    background-color: #E50914;
+    border: 1px solid #E50914;
+    border-radius: 4px;
+    height: 35px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.formSubmit:hover {
+    background-color: #8B0000;
 }
