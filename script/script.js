@@ -1,56 +1,62 @@
 function abrirSaibaMais(botaoId) {
-    const tituloProduto = document.getElementById("txt1");
-    const descricaoProduto = document.getElementById("txt2");
-    const precoProduto = document.getElementById("txt3");
+    document.getElementById("modalFigures").style.display = "none";
+    document.getElementById("modalPersonalizados").style.display = "none";
 
-    switch (botaoId) {
-        case "botaoLuffy":
-            tituloProduto.innerHTML = "Monk D. Luffy - One Piece Film: Z";
-            descricaoProduto.innerHTML = "Action figure de 20cm inspirada no filme One Piece, de 2012. Feita em PVC de alta qualidade, com braços e pernas articulados.";
-            precoProduto.innerHTML = "R$ 499,90";
-            break;
+    if (botaoId === "botaoLuffy" || botaoId === "botaoBatman" || botaoId === "botaoIronMan") {
+        const titulo = document.getElementById("txt1");
+        const descricao = document.getElementById("txt2");
+        const preco = document.getElementById("txt3");
 
-        case "botaoBatman":
-            tituloProduto.innerHTML = "Batman - Edição Clássica 1989";
-            descricaoProduto.innerHTML = "Action figure de 15cm inspirada no visual clássico do Cavaleiro das Trevas. Feita em PVC de alta qualidade, com braços e pernas articulados.";
-            precoProduto.innerHTML = "R$ 299,90";
-            break;
+        switch (botaoId) {
+            case "botaoLuffy":
+                titulo.innerHTML = "Monk D. Luffy - One Piece Film: Z";
+                descricao.innerHTML = "Action figure de 20cm inspirada no filme One Piece, de 2012. Feita em PVC de alta qualidade, com braços e pernas articulados.";
+                preco.innerHTML = "R$ 499,90";
+                break;
+            case "botaoBatman":
+                titulo.innerHTML = "Batman - Edição Clássica 1989";
+                descricao.innerHTML = "Action figure de 15cm inspirada no visual clássico do Cavaleiro das Trevas. Feita em PVC de alta qualidade, com braços e pernas articulados.";
+                preco.innerHTML = "R$ 299,90";
+                break;
+            case "botaoIronMan":
+                titulo.innerHTML = "Homem de Ferro - Armadura Mark 85";
+                descricao.innerHTML = "Action figure de 20cm inspirada na armadura utilizada por Tony Stark em Vingadores: Ultimato. Altamente detalhada, com braços e pernas articulados.";
+                preco.innerHTML = "R$ 799,90";
+                break;
+        }
 
-        case "botaoIronMan":
-            tituloProduto.innerHTML = "Homem de Ferro - Armadura Mark 85";
-            descricaoProduto.innerHTML = "Action figure de 20cm inspirada na armadura utilizada por Tony Stark em Vingadores: Ultimato. Altamente detalhada, com braços e pernas articulados.";
-            precoProduto.innerHTML = "R$ 799,90";
-            break;
+        document.getElementById("modalFigures").style.display = "inline-block";
 
-        case "botaoCanecaLuffy":
-            tituloProduto.innerHTML = "Caneca Personalizada - Monk D. Luffy";
-            descricaoProduto.innerHTML = "Caneca de cerâmica personalizável com estampa de Monkey D. Luffy. Um excelente presente para fãs de anime. ";
-            precoProduto.innerHTML = "R$ 89,90";
-            break;
+    } else if (botaoId === "botaoCanecaLuffy" || botaoId === "botaoFlash" || botaoId === "botaoGojo") {
+        const titulo = document.getElementById("txtPersonalizado1");
+        const descricao = document.getElementById("txtPersonalizado2");
+        const preco = document.getElementById("txtPersonalizado3");
 
-        case "botaoFlash":
-            tituloProduto.innerHTML = "Camiseta Personalizada - Flash";
-            descricaoProduto.innerHTML = "Camiseta unissex em algodão com estampa do herói Flash. Confortável, com impressão de alta qualidade e disponível em diversos tamanhos.";
-            precoProduto.innerHTML = "R$ 109,90";
-            break;
+        switch (botaoId) {
+            case "botaoCanecaLuffy":
+                titulo.innerHTML = "Caneca Personalizada - Monk D. Luffy";
+                descricao.innerHTML = "Caneca de cerâmica personalizável com estampa de Monkey D. Luffy. Um excelente presente para fãs de anime.";
+                preco.innerHTML = "R$ 89,90";
+                break;
+            case "botaoFlash":
+                titulo.innerHTML = "Camiseta Personalizada - Flash";
+                descricao.innerHTML = "Camiseta unissex em algodão com estampa do herói Flash. Confortável, com impressão de alta qualidade e disponível em diversos tamanhos.";
+                preco.innerHTML = "R$ 109,90";
+                break;
+            case "botaoGojo":
+                titulo.innerHTML = "Chaveiro Personalizado - Satoru Gojo";
+                descricao.innerHTML = "Chaveiro personalizável com arte do personagem Satoru Gojo, de Jujutsu Kaisen. Leve e resistente, ideal para mochilas, chaves ou decoração.";
+                preco.innerHTML = "R$ 29,90";
+                break;
+        }
 
-        case "botaoGojo":
-            tituloProduto.innerHTML = "Chaveiro Personalizado - Satoru Gojo";
-            descricaoProduto.innerHTML = "Chaveiro personalizável com arte do personagem Satoru Gojo, de Jujutsu Kaisen. Leve e resistente, ideal para mochilas, chaves ou decoração.";
-            precoProduto.innerHTML = "R$ 29,90";
-            break;    
-
-        default:
-            tituloProduto.innerHTML = "";
-            descricaoProduto.innerHTML = "";
-            precoProduto.innerHTML = "";
+        document.getElementById("modalPersonalizados").style.display = "inline-block";
     }
-
-    document.getElementById("saibaMais").style.display = "inline-block";
 }
 
 function fecharSaibaMais() {
-    document.getElementById("saibaMais").style.display = "none";
+    document.getElementById("modalFigures").style.display = "none";
+    document.getElementById("modalPersonalizados").style.display = "none";
 }
 
 function aplicarMascaraTelefone(evento) {
@@ -95,7 +101,6 @@ function obterParametrosUrl() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const botaoFecharModal = document.getElementById("fecharBotaoSaibaMais");
     const botaoLuffy = document.getElementById("botaoLuffy");
     const botaoBatman = document.getElementById("botaoBatman");
     const botaoIronMan = document.getElementById("botaoIronMan");
@@ -104,10 +109,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const botaoGojo = document.getElementById("botaoGojo");
     const campoTelefone = document.getElementById("celular");
     const botaoVoltar = document.getElementById("botaoRetornar");
-
-    if (botaoFecharModal) {
-        botaoFecharModal.addEventListener("click", fecharSaibaMais);
-    }
 
     if (botaoLuffy) {
         botaoLuffy.addEventListener("click", () => abrirSaibaMais("botaoLuffy"));
@@ -132,6 +133,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (botaoGojo) {
         botaoGojo.addEventListener("click", () => abrirSaibaMais("botaoGojo"));
     }
+
+    document.getElementById("fecharModalFigures")?.addEventListener("click", fecharSaibaMais);
+    document.getElementById("fecharModalPersonalizados")?.addEventListener("click", fecharSaibaMais);
 
     if (campoTelefone) {
         campoTelefone.addEventListener("input", aplicarMascaraTelefone);

@@ -378,13 +378,13 @@ h2 {
     font-weight: 600;
 }
 
-#saibaMais {
+#modalFigures, #modalPersonalizados {
     display: none;
     background-color: #222;
     color: #fff;
     margin: 20px auto;
     padding: 20px;
-    width: 20%;
+    width: 50%;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     text-align: justify;
@@ -395,13 +395,19 @@ h2 {
     position: relative;
 }
 
-.modal {
+#modalFigures {
     position: absolute;
-    top: 130%;
-    left: 39.9%;
+    top: 150%;
+    left: 25%;
 }
 
-#fecharBotaoSaibaMais {
+#modalPersonalizados {
+    position: absolute;
+    top: 235%;
+    left: 25%;
+}
+
+#fecharModalFigures, #fecharModalPersonalizados {
     cursor: pointer;
     position: absolute;
     top: 3%;
@@ -411,6 +417,10 @@ h2 {
     padding: 0;
     border-radius: 4px;
     cursor: pointer;
+    text-align: center;
+}
+
+.infoH, .infoL {
     text-align: center;
 }
 
