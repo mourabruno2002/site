@@ -140,7 +140,7 @@ body {
     margin-bottom: 0;
 }
 
-.maisVendidos img:hover, .imagensInicio img:hover {
+.maisVendidos img:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     filter: brightness(1.1);
@@ -156,13 +156,25 @@ body {
 .imagensInicio {
     display: flex;
     width: 100%;
+    height: 773px;
     gap: 0.5%;
 }
 
-.imagensInicio img {
+.imagemPrincipal {
+    width: 616px;
+}
+
+.imagemLink {
+    width: 100.7%;
+    top: 475px;
+}
+
+.imagemLink:hover {
+    transform: scale(1.05);
+}
+
+.divisaoImg {
     width: 33%;
-    box-shadow: 0 0 10px #ff000069;
-    border: none;
 }
 
 .historia {
@@ -397,13 +409,13 @@ h2 {
 
 #modalFigures {
     position: absolute;
-    top: 150%;
+    top: 130%;
     left: 25%;
 }
 
 #modalPersonalizados {
     position: absolute;
-    top: 235%;
+    top: 200%;
     left: 25%;
 }
 
@@ -411,7 +423,7 @@ h2 {
     cursor: pointer;
     position: absolute;
     top: 3%;
-    left: 90%;
+    left: 95.8%;
     background-color: #E50914;
     width: 35px;
     padding: 0;
@@ -440,6 +452,14 @@ h2 {
     color: #fab60d;
     font-style: italic;
     font-size: 14px;
+}
+
+.dataPubli2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #fab60d;
+    font-style: italic;
+    font-size: 20px;
 }
 
 .tabelaResultado {
@@ -546,4 +566,12 @@ input::placeholder {
 
 .formSubmit:hover {
     background-color: #8B0000;
+}
+
+.imagemPrincipal {
+    position: absolute;
+}
+
+.imagemLink {
+    position: relative;
 }

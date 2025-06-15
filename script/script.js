@@ -188,4 +188,22 @@ document.addEventListener("DOMContentLoaded", function () {
             areaResultado.appendChild(tabelaResultado);
         }
     }
+
+    const formContato = document.querySelector("form");
+    const campoDataNasc = document.getElementById("dataNasc");
+
+    if (formContato && campoDataNasc) {
+        formContato.addEventListener("submit", function (e) {
+            const dataInserida = new Date(campoDataNasc.value);
+            const hoje = new Date();
+
+            if (campoDataNasc.value && dataInserida > hoje) {
+                alert("A data de nascimento não pode ser no futuro!");
+                e.preventDefault();
+            }
+        });
+
+        const hoje = new Date().toISOString().split("T")[0];
+        campoDataNasc.setAttribute("max", hoje);
+    }
 });
