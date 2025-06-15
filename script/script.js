@@ -108,7 +108,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const botaoFlash = document.getElementById("botaoFlash");
     const botaoGojo = document.getElementById("botaoGojo");
     const campoTelefone = document.getElementById("celular");
-    const botaoVoltar = document.getElementById("botaoRetornar");
 
     if (botaoLuffy) {
         botaoLuffy.addEventListener("click", () => abrirSaibaMais("botaoLuffy"));
@@ -139,12 +138,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (campoTelefone) {
         campoTelefone.addEventListener("input", aplicarMascaraTelefone);
-    }
-
-    if (botaoVoltar) {
-        botaoVoltar.addEventListener("click", () => {
-            window.location.href = "contato.html";
-        });
     }
 
     if (window.location.pathname.includes("contatoAction.html")) {

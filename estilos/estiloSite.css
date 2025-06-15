@@ -47,7 +47,6 @@ body {
     color: #ffffff;
 }
 
-#servicos,
 #contato {
     width: 25%;
 }
@@ -101,11 +100,7 @@ body {
 }
 
 
-#imgTelefone {
-    width: 30px;
-    height: 30px;
-}
-
+#imgTelefone,
 #imgwpp {
     width: 30px;
     height: 30px;
@@ -135,9 +130,11 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 0;
     margin: 1%;
     margin-bottom: 0;
+    width: 100%;
+    gap: 2%;
+
 }
 
 .maisVendidos img:hover {
@@ -197,14 +194,6 @@ body {
     width: 50%;
     border: 1px solid #E50914;
     margin-left: 25%;
-}
-
-.maisVendidos {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    gap: 2%;
-    justify-content: center;
 }
 
 .produto {
@@ -390,7 +379,8 @@ h2 {
     font-weight: 600;
 }
 
-#modalFigures, #modalPersonalizados {
+#modalFigures,
+#modalPersonalizados {
     display: none;
     background-color: #222;
     color: #fff;
@@ -419,7 +409,8 @@ h2 {
     left: 25%;
 }
 
-#fecharModalFigures, #fecharModalPersonalizados {
+#fecharModalFigures,
+#fecharModalPersonalizados {
     cursor: pointer;
     position: absolute;
     top: 3%;
@@ -432,7 +423,8 @@ h2 {
     text-align: center;
 }
 
-.infoH, .infoL {
+.infoH,
+.infoL {
     text-align: center;
 }
 
