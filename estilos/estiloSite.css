@@ -553,7 +553,7 @@ input::placeholder {
     height: 35px;
     margin-left: 10px;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .formSubmit:hover {
