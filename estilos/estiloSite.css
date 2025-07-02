@@ -596,3 +596,48 @@ input::placeholder {
     text-align: left;
     padding-left: 10px;
 }
+
+.formPrincipalProduto {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.fomrProduto {
+    background-color: #121212;
+    width: 28%;
+}
+
+.formProduto label {
+    color: white;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.formProduto textarea {
+    color: white;
+    font-size: 18px;
+    background-color: #121212;
+    border: 1px solid #E50914;
+}
+
+.formProduto input {
+    color: white;
+    font-size: 18px;
+    height: 30px;
+}
+
+.formCadastrar{
+    background-color: #E50914;
+    border: 1px solid #E50914;
+    border-radius: 4px;
+    height: 35px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.formCadastrar:hover {
+    background-color: #8B0000;
+}
+
+
