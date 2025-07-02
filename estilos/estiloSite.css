@@ -485,6 +485,7 @@ h2 {
     font-weight: 600;
     padding: 0;
     color: #ffffffdc;
+    margin-top: 20px;
 }
 
 .botaoRetornar:hover {
@@ -566,4 +567,32 @@ input::placeholder {
 
 .imagemLink {
     position: relative;
+}
+
+#dadosTabela {
+    display: flex;
+    justify-content: center;
+    border-collapse: collapse;
+}
+
+#dadosTabela th{
+    width: 175px;
+    height: 35px;
+    background-color: rgb(34, 34, 34);
+    border: 1px solid #E50914;
+    border-collapse: collapse;
+    color: white;
+    text-align: left;
+    padding-left: 10px;
+
+}
+
+#dadosTabela td {
+    width: 250px;
+    background-color: rgb(34, 34, 34);
+    border: 1px solid #E50914;
+    border-collapse: collapse;
+    color: white;
+    text-align: left;
+    padding-left: 10px;
 }

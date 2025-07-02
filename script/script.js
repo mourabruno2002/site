@@ -140,48 +140,6 @@ document.addEventListener("DOMContentLoaded", function () {
         campoTelefone.addEventListener("input", aplicarMascaraTelefone);
     }
 
-    if (window.location.pathname.includes("contatoAction.html")) {
-        const parametrosForm = obterParametrosUrl();
-        const areaResultado = document.getElementById("dadosTabela");
-
-        if (parametrosForm && Object.keys(parametrosForm).length > 0) {
-            const tabelaResultado = document.createElement("table");
-            tabelaResultado.className = "tabelaResultado";
-
-            const nomesFormatados = {
-                name: "Nome",
-                email: "E-mail",
-                celular: "Celular",
-                dataNasc: "Data de Nascimento",
-                termoAceite: "Termo de Aceite"
-            };
-
-            for (const campo in parametrosForm) {
-                const linha = document.createElement("tr");
-
-                const celulaNomeCampo = document.createElement("td");
-                celulaNomeCampo.textContent = nomesFormatados[campo] || campo;
-                celulaNomeCampo.className = "label";
-
-                const celulaValorCampo = document.createElement("td");
-                let valor = parametrosForm[campo];
-
-                if (campo === "dataNasc" && valor) {
-                    const [ano, mes, dia] = valor.split("-");
-                    valor = `${dia}/${mes}/${ano}`;
-                }
-
-                celulaValorCampo.textContent = valor;
-
-                linha.appendChild(celulaNomeCampo);
-                linha.appendChild(celulaValorCampo);
-                tabelaResultado.appendChild(linha);
-            }
-
-            areaResultado.appendChild(tabelaResultado);
-        }
-    }
-
     const formContato = document.querySelector("form");
     const campoDataNasc = document.getElementById("dataNasc");
 

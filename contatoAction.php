@@ -6,11 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/estiloSite.css">
     <link rel="icon" type="image/png" href="imagens/logoprincipal.png">
-    <title>Action Figures - Contato</title>
+    <title>Action Figures - Retorno Furmulário</title>
 </head>
 
 <body>
-    <div class="barraSuperior1"></div>
+    <?php
+    $nome = $_POST["name"];
+    $email = $_POST["email"];
+    $celular = $_POST["celular"];
+    $termo = $_POST["termoAceite"];
+    $data = $_POST["dataNasc"];
+
+    list($ano, $mes, $dia) = explode('-', $data);
+    $aniversario =  $dia . '/' . $mes . '/' . $ano;
+
+    $hoje = mktime(0, 0, 0, date('m'), date('d'), date('y'));
+
+    $nascimento = mktime(0, 0, 0, $mes, $dia, $ano);
+    $idade = floor((((($hoje - $nascimento) / 60) / 60) / 24) / 365.25)
+    ?>
+
     <div class="barraSuperior2"></div>
 
     <div class="superiorPagina">
@@ -36,47 +51,18 @@
         </div>
     </div>
 
-    <div class="centroPagina">
-        <h2>Deixe seu Contato!</h2>
-        <div class="formContato">
-            <form class="formPrincipal" method="post" action="contatoAction.php">
-                <div class="formGrupo">
-                    <img src="imagens/nomeContato.png" alt="Ícone Nome do Contato">
-                    <label for="name"><i class="formNome" aria-hidden="true"></i></label>
-                    <input type="text" name="name" id="name" placeholder="Seu Nome..." required>
-                </div>
-
-                <div class="formGrupo">
-                    <img src="imagens/emailContato.png" alt="Ícone E-mail Contato">
-                    <label for="email"><i class="formEmail" aria-hidden="true"></i></label>
-                    <input type="email" name="email" id="email" placeholder="Seu E-mail..." required>
-                </div>
-
-                <div class="formGrupo">
-                    <img src="imagens/telefoneContato.png" alt="Ícone Telefone Contato">
-                    <label for="celular"><i class="formCelular" aria-hidden="true"></i></label>
-                    <input type="phone" name="celular" id="celular" pattern="\(\d{2})\s\d{4,5}-\d{4}$"
-                        placeholder="Seu Celular..." title="(xx) xxxxx-xxxx" required>
-                </div>
-
-                <div class="formGrupo">
-                    <img src="imagens/dataContato.png" alt="Ícone Data Nascimento">
-                    <label for="dataNasc"><i class="formDataNasc" aria-hidden="true"></i></label>
-                    <input type="date" name="dataNasc" id="dataNasc" title="Data de Nascimento">
-                </div>
-
-                <div class="formGrupo">
-                    <input type="checkbox" name="termoAceite" id="termoAceite" class="termoAceite" required>
-                    <label for="termoAceite" class="labelTermoAceite"><span><span></span></span>Eu concordo com os <a
-                            href="#" class="termoServico">termos de serviço</a>.</label>
-                </div>
-
-                <div class="formGrupo formBotao">
-                    <input type="submit" class="formSubmit" value="Enviar">
-                    <input type="reset" class="formSubmit" value="Limpar">
-                </div>
-            </form>
-
+    <div class="centroPagina" id="resultado">
+        <h2>Dados Recebidos</h2>
+        <table id="dadosTabela">
+            <tr><th>Nome</th><td><?php echo $nome; ?></td></tr>
+            <tr><th>E-mail</th><td><?php echo $email; ?></td></tr>
+            <tr><th>Celular</th><td><?php echo $celular; ?></td></tr>
+            <tr><th>Aniversário</th><td><?php echo $aniversario; ?></td></tr>
+            <tr><th>Idade</th><td><?php echo $idade; ?></td></tr>
+            <tr><th>Aceite Formulário</th><td><?php echo $termo; ?></td></tr>
+        </table>
+        <div class="botaoRetorno">
+        <a href="contato.html" class="botaoRetornar">Retornar</a>
         </div>
     </div>
 
@@ -150,7 +136,6 @@
     </div>
 
     <script src="script/script.js"></script>
-
 </body>
 
 </html>
