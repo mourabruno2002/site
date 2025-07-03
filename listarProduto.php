@@ -14,7 +14,7 @@
 
     <div class="centroPagina">
         <div class="painelProdutos">
-            <h2>Produtos Cadastrados</h2>
+            <h2>Produtos</h2>
             <?php
             date_default_timezone_set("America/Sao_Paulo");
             echo "<p class='dataAcesso'>Acesso em: " . date("d/m/Y H:i:s") . "</p>";
@@ -29,11 +29,12 @@
             $resultado = $conn->query($sql);
 
             if ($resultado->num_rows > 0) {
+                echo "<div class='centroPagina'>";
                 echo "<table class='tabelaProdutos'>";
                 echo "<tr>
                     <th>Imagem</th>
                     <th>Nome</th>
-                    <th>Descrição</th>
+                    <th id='descTabela'>Descrição</th>
                     <th>Preço</th>
                     <th>Categoria</th>
                     <th>Ações</th>
@@ -41,7 +42,7 @@
 
                 while ($produto = $resultado->fetch_assoc()) {
                     echo "<tr>";
-                    echo "<td><img src='imagens/" . $produto['imagem'] . "' alt='Imagem' style='max-width: 100px;'></td>";
+                    echo "<td><a href='index.php'><img src='imagens/" . $produto['imagem'] . "' alt='Imagem' style='max-width: 100px;'></a></td>";
                     echo "<td>" . $produto['nome'] . "</td>";
                     echo "<td>" . $produto['descricao'] . "</td>";
                     echo "<td>R$ " . number_format($produto['preco'], 2, ',', '.') . "</td>";
@@ -53,6 +54,8 @@
                 }
 
                 echo "</table>";
+                echo "<form class='adicionarProduto' action='cadastrarProduto.'><input type='submit' value='+' class='novoProduto'></form>";
+                echo "</div>";
             } else {
                 echo "<p> Nenhum produto foi encontrado. Cadastre um produto e tente novamente! </p>";
             }

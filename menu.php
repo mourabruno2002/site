@@ -12,6 +12,7 @@
             <a href="sobre.php">Sobre</a>
             <a href="noticias.php" id="noticias">Notícias</a>
             <a href="contato.php" id="contato">Contato</a>
+            <a href="listarProduto.php" id="contato">Produtos</a>
         </div>
 
         <div class="telefone">

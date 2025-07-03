@@ -584,7 +584,6 @@ input::placeholder {
     color: white;
     text-align: left;
     padding-left: 10px;
-
 }
 
 #dadosTabela td {
@@ -627,17 +626,101 @@ input::placeholder {
     height: 30px;
 }
 
-.formCadastrar{
+.formCadastrarVoltar {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.formCadastrar, .formVoltarLista{
     background-color: #E50914;
     border: 1px solid #E50914;
     border-radius: 4px;
-    height: 35px;
+    height: 50px;
+    width: 50%;
     cursor: pointer;
     font-weight: 700;
+    color: white;
 }
 
-.formCadastrar:hover {
+.formCadastrar:hover, .formVoltarLista:hover {
     background-color: #8B0000;
 }
+
+.tabelaProdutos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.tabelaProdutos th, .tabelaProdutos tr {
+    border: 1px solid #8B0000;
+    border-collapse: collapse;
+    color: #fff;
+}
+
+.tabelaProdutos tr {
+    height: 50px;
+    text-align: center;
+}
+
+.tabelaProdutos tr:nth-child(odd) {
+    background-color: #1a1a1a;
+}
+
+.tabelaProdutos tr:nth-child(even) {
+    background-color: #222
+}
+
+.tabelaProdutos th {
+    width: 250px;
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: #E50914;
+}
+
+.tabelaProdutos img {
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 5px;
+    border: 1px solid #222;
+}
+
+#descTabela {
+    width: 500px;
+}
+
+.adicionarProduto {
+    position: absolute;
+}
+
+.novoProduto{
+    position: relative;
+    left: 950px;
+    background-color: #cc0000;
+    color: white;
+    font-size: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 10px #8B0000;
+    position: relative;
+    margin: 30px auto;
+}
+
+
+.dataAcesso {
+    text-align: center;
+    color: white;
+}
+
+
+
+
+
 
 

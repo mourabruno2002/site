@@ -100,6 +100,11 @@ function obterParametrosUrl() {
     return parametros;
 }
 
+function removerRequired() {
+    const inputs = document.querySelectorAll('input[required], textarea[required]');
+    inputs.forEach(input => input.removeAttribute('required'));
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     const botaoLuffy = document.getElementById("botaoLuffy");
     const botaoBatman = document.getElementById("botaoBatman");
@@ -158,3 +163,4 @@ document.addEventListener("DOMContentLoaded", function () {
         campoDataNasc.setAttribute("max", hoje);
     }
 });
+

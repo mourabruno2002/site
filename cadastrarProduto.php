@@ -32,13 +32,22 @@
                 <label>Imagem:</label><br>
                 <input type="file" name="imagem"><br><br>
 
-                <input type="submit" value="Cadastrar" class="formCadastrar">
+                <div class="formCadastrarVoltar">
+                <button type="submit" name="acao" value="cadastrar" class="formCadastrar">Cadastrar</button>
+                <button type="submit" name="acao" value="voltar" class="formVoltarLista" onclick="removerRequired()">Voltar</button>
+                </div>
+
+                <?php if (isset($_GET['sucesso']) && $_GET['sucesso'] == 1): ?>
+                    <p style="color: green; margin-top: 10px;" id="">Produto cadastrado com sucesso!</p>
+                <?php endif; ?>
 
             </form>
         </div>
     </div>
 
     <?php include('rodape.php'); ?>
+
+    <script src="script/script.js"></script>
 
 </body>
 
