@@ -11,7 +11,7 @@ if ($conn->connect_error) {
     die("A conexão falhou: " . $conn->connect_error);
 }
 
-$imagemNome = "";
+$imagem_nome = "";
 if (!empty($_FILES["imagem"]["name"])) {
     $pasta_destino = "imagens/";
     $imagem_nome = basename($_FILES["imagem"]["name"]);

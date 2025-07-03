@@ -19,7 +19,7 @@
             date_default_timezone_set("America/Sao_Paulo");
             echo "<p class='dataAcesso'>Acesso em: " . date("d/m/Y H:i:s") . "</p>";
 
-            $conn = new mysqli("localhost", "root", "", "seu_banco");
+            $conn = new mysqli("localhost", "root", "", "lojaAction");
 
             if ($conn->connect_error) {
                 die("Falha de conexão: " . $conn->connect_error);
@@ -54,7 +54,7 @@
 
                 echo "</table>";
             } else {
-                echo "<p> Nenhum produto foi encontrado! </p>";
+                echo "<p> Nenhum produto foi encontrado. Cadastre um produto e tente novamente! </p>";
             }
 
             $conn->close();

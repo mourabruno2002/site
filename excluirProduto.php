@@ -6,7 +6,7 @@ if (!isset($_GET['id'])) {
 
 $id = $_GET['id'];
 
-$conn = new mysqli("localhost", "root", "", "seu_banco");
+$conn = new mysqli("localhost", "root", "", "lojaAction");
 
 if ($conn->connect_error) {
     die("Falha na conexão: " . $conn->connect_error);
