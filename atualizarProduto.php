@@ -16,6 +16,13 @@ $resultado = $conn->query($sqlImagem);
 $produto = $resultado->fetch_assoc();
 $imagem_nome = $produto["imagem"];
 
+$acao = $_POST['acao'] ?? '';
+
+if ($acao === 'cancelar') {
+    header("Location: listarProduto.php");
+    exit;
+}
+
 if (!empty($_FILES["imagem"]["name"])) {
     $pasta_destino = "imagens/";
     $novaImagem = basename($_FILES["imagem"]["name"]);
@@ -42,7 +49,7 @@ $sql = "UPDATE produtos
         WHERE id = $id";
 
 if ($conn->query($sql) === TRUE) {
-    header("Location: listarProduto.php");
+    header("Location: listarProduto.php?sucesso_edicao=1");
     exit;
 } else {
     echo "<p style='color:red;'>Erro ao atualizar: " . $conn->error . "</p>";

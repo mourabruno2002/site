@@ -105,6 +105,19 @@ function removerRequired() {
     inputs.forEach(input => input.removeAttribute('required'));
 }
 
+function renomearImgEnviada() {
+    const inserirImg = document.getElementById("imagem");
+    const nomeImagem = document.getElementById("nomeImagem");
+
+    inserirImg.addEventListener("change", function () {
+        if (inserirImg.files.length > 0) {
+            nomeImagem.textContent = inserirImg.files[0].name;
+        } else {
+            nomeImagem.textContent = "Nenhuma imagem selecionada";
+        }
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     const botaoLuffy = document.getElementById("botaoLuffy");
     const botaoBatman = document.getElementById("botaoBatman");
@@ -162,5 +175,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const hoje = new Date().toISOString().split("T")[0];
         campoDataNasc.setAttribute("max", hoje);
     }
+
+    renomearImgEnviada();
 });
+
 

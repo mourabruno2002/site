@@ -632,6 +632,40 @@ input::placeholder {
     height: 30px;
 }
 
+.formImagem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.inserirImg {
+    display: none;
+}
+
+.botaoEscolherImagem {
+    background-color: #E50914;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.botaoEscolherImagem:hover {
+    background-color: #8B0000;
+}
+
+.nomeImagem {
+    color: #ffffffdc;
+    font-size: 14px;
+    font-style: italic;
+}
+
 .formCadastrarVoltar {
     display: flex;
     flex-direction: row;
@@ -647,6 +681,7 @@ input::placeholder {
     cursor: pointer;
     font-weight: 700;
     color: white;
+    margin-top: 20px;
 }
 
 .formCadastrar:hover, .formVoltarLista:hover {
@@ -668,7 +703,7 @@ input::placeholder {
 }
 
 .tabelaProdutos tr {
-    height: 50px;
+    height: 91px;
     text-align: center;
 }
 

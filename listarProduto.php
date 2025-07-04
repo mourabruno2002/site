@@ -6,13 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/estiloSite.css">
     <link rel="icon" type="image/png" href="imagens/logoprincipal.png">
-    <title>Action Figures - Listar Produtos</title>
+    <title>Action Figures - Produtos</title>
 </head>
 
 <body>
     <?php include('menu.php') ?>
 
     <div class="centroPagina">
+
+        <?php if (isset($_GET['sucesso_edicao']) && $_GET['sucesso_edicao'] == 1): ?>
+            <p id="mensagemSucesso">Produto atualizado com sucesso!</p>
+            <?php endif; ?>
+
         <div class="painelProdutos">
             <h2>Produtos</h2>
             <?php
@@ -27,7 +32,7 @@
 
             $sql = "SELECT * FROM produtos ORDER BY id DESC";
             $resultado = $conn->query($sql);
-
+            
             echo "<div class='centroPagina'>";
             echo "<table class='tabelaProdutos'>";
             echo "<tr>
@@ -49,12 +54,12 @@
                     echo "<td>R$ " . number_format($produto['preco'], 2, ',', '.') . "</td>";
                     echo "<td>" . $produto['categoria'] . "</td>";
                     echo "<td>
-                        <a href='editarProduto.php?id=" . $produto['id'] . "' class='botaoAcao'><img src='imagens/lapis.png' class='botaoEditar'></img></a>
-                        <a href='excluirProduto.php?id=" . $produto['id'] . "' class='botaoAcao' onclick=\"return confirm('Tem certeza que deseja excluir este produto?');
+                        <a href='editarProduto.php?id=" . $produto['id'] . "' class='botaoAcao' title='Editar'><img src='imagens/lapis.png' class='botaoEditar'></img></a>
+                        <a href='excluirProduto.php?id=" . $produto['id'] . "' class='botaoAcao' title='Excluir' onclick=\"return confirm('Tem certeza que deseja excluir este produto?');
                         \"><img src='imagens/lixeira.png' class='botaoExcluir'></img></a></td>";
                     echo "</tr>";
                 }
-
+                
 
             } else {
                 echo "<tr>
@@ -63,15 +68,16 @@
             }
 
             echo "</table>";
-            echo "<form class='adicionarProduto' action='cadastrarProduto.php'><input type='submit' value='+' class='novoProduto'></form>";
+            echo "<form class='adicionarProduto' action='cadastrarProduto.php'><input type='submit' value='+' class='novoProduto' title='Adicionar Produto'></form>";
             echo "</div>";
 
+            
             $conn->close();
 
             ?>
         </div>
     </div>
-
+    
     <?php include('rodape.php'); ?>
 
 </body>

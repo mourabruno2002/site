@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/estiloSite.css">
     <link rel="icon" type="image/png" href="imagens/logoprincipal.png">
-    <title>Action Figures - Home</title>
+    <title>Action Figures - Cadastrar</title>
 </head>
 
 <body>
@@ -29,12 +29,15 @@
                 <label>Categoria:</label><br>
                 <input type="text" name="categoria"><br><br>
 
-                <label>Imagem:</label><br>
-                <input type="file" name="imagem"><br><br>
+                <div class="formImagem">
+                    <label for="imagem" class="botaoEscolherImagem">Escolher Imagem</label>
+                    <span id="nomeImagem" class="nomeImagem">Nenhuma imagem selecionada</span>
+                    <input type="file" name="imagem" id="imagem" class="inserirImg">
+                </div>
 
                 <div class="formCadastrarVoltar">
-                <button type="submit" name="acao" value="cadastrar" class="formCadastrar">Cadastrar</button>
-                <button type="submit" name="acao" value="voltar" class="formVoltarLista" onclick="removerRequired()">Voltar</button>
+                    <button type="submit" name="acao" value="cadastrar" class="formCadastrar">Cadastrar</button>
+                    <button type="submit" name="acao" value="voltar" class="formVoltarLista" onclick="removerRequired()">Voltar</button>
                 </div>
 
                 <?php if (isset($_GET['sucesso']) && $_GET['sucesso'] == 1): ?>

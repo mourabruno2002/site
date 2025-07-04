@@ -24,41 +24,56 @@ $produto = $resultado->fetch_assoc();
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <title>Editar Produto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/estiloSite.css">
+    <link rel="icon" type="image/png" href="imagens/logoprincipal.png">
+    <title>Action Figures - Editar</title>
 </head>
+
 <body>
-<?php include('menu.php'); ?>
+    <?php include('menu.php'); ?>
 
-<div class="centroPagina">
-    <h2>Editar Produto</h2>
-    <form action="atualizarProduto.php" method="POST" enctype="multipart/form-data" class="formProduto">
-        <input type="hidden" name="id" value="<?= $produto['id'] ?>">
+    <div class="centroPagina">
+        <h2>Editar Produto</h2>
+        <div class="formPrincipalProduto">
+            <form action="atualizarProduto.php" method="POST" enctype="multipart/form-data" class="formProduto">
+                <input type="hidden" name="id" value="<?= $produto['id'] ?>">
 
-        <label>Nome:</label><br>
-        <input type="text" name="nome" value="<?= $produto['nome'] ?>" required><br><br>
+                <label>Nome:</label><br>
+                <input type="text" name="nome" value="<?= $produto['nome'] ?>" required><br><br>
 
-        <label>Descrição:</label><br>
-        <textarea name="descricao" rows="4" cols="50"><?= $produto['descricao'] ?></textarea><br><br>
+                <label>Descrição:</label><br>
+                <textarea name="descricao" rows="4" cols="50"><?= $produto['descricao'] ?></textarea><br><br>
 
-        <label>Preço:</label><br>
-        <input type="number" name="preco" step="0.01" value="<?= $produto['preco'] ?>" required><br><br>
+                <label>Preço:</label><br>
+                <input type="number" name="preco" step="0.01" value="<?= $produto['preco'] ?>" required><br><br>
 
-        <label>Categoria:</label><br>
-        <input type="text" name="categoria" value="<?= $produto['categoria'] ?>"><br><br>
+                <label>Categoria:</label><br>
+                <input type="text" name="categoria" value="<?= $produto['categoria'] ?>"><br><br>
 
-        <label>Imagem atual:</label><br>
-        <img src="imagens/<?= $produto['imagem'] ?>" style="max-width: 100px;"><br><br>
+                <label>Imagem atual:</label><br>
+                <img src="imagens/<?= $produto['imagem'] ?>" style="max-width: 100px;"><br><br>
 
-        <label>Nova imagem (opcional):</label><br>
-        <input type="file" name="imagem"><br><br>
+                <div class="formImagem">
+                    <label for="imagem" class="botaoEscolherImagem">Escolher Imagem</label>
+                    <span id="nomeImagem" class="nomeImagem">Nenhuma imagem selecionada</span>
+                    <input type="file" name="imagem" id="imagem" class="inserirImg">
+                </div>
 
-        <input type="submit" value="Salvar Alterações" class="formCadastrar">
-    </form>
-</div>
+                <div class="formCadastrarVoltar">
+                    <button type="submit" name="acao" value="Salvar Alterações" class="formCadastrar">Salvar</button>
+                    <button type="submit" name="acao" value="cancelar" class="formVoltarLista" onclick="removerRequired()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-<?php include('rodape.php'); ?>
+    <?php include('rodape.php'); ?>
+
+    <script src="script/script.js"></script>
 </body>
+
 </html>
