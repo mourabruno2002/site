@@ -10,9 +10,7 @@
 </head>
 
 <body>
-    <?php
-    include('menu.php')
-    ?>
+    <?php include('menu.php') ?>
 
     <div class="centroPagina">
         <h2>Deixe seu Contato!</h2>
@@ -57,8 +55,6 @@
 
         </div>
     </div>
-
-    <div class="barraInferior2"></div>
 
     <?php
     include('rodape.php')

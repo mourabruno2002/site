@@ -50,11 +50,7 @@
         </div>
     </div>
 
-    <div class="barraInferior2"></div>
-
-    <?php
-    include('rodape.php')
-    ?>
+    <?php include('rodape.php') ?>
 </body>
 
 </html>

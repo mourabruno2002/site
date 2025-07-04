@@ -10,9 +10,7 @@
 </head>
 
 <body>
-    <?php
-    include('menu.php')
-    ?>
+    <?php include('menu.php') ?>
 
     <div class="centroPagina">
         <div class="historia">
@@ -55,11 +53,7 @@
         </div>
     </div>
 
-    <div class="barraInferior2"></div>
-
-    <?php
-    include('rodape.php')
-    ?>
+    <?php include('rodape.php') ?>
 </body>
 
 </html>

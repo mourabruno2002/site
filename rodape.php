@@ -1,3 +1,5 @@
+    <div class="barraInferior2"></div>
+    
     <div class="inferiorPagina">
 
         <div class="localizacao">
@@ -64,3 +66,5 @@
             </div>
         </div>
     </div>
+
+    

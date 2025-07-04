@@ -5,6 +5,7 @@ html {
 body {
     display: flex;
     flex-direction: column;
+    height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     background-color: #1A1A1A;
@@ -122,6 +123,8 @@ body {
 }
 
 .centroPagina {
+    display: flex;
+    flex-direction: column;
     margin: 1%;
     margin-bottom: 100px;
 }
@@ -501,7 +504,9 @@ h2 {
 
 .formPrincipal {
     background-color: #121212;
+    height: 350px;
     width: 28%;
+    padding-top: 20px;
 }
 
 .formContato {
@@ -539,7 +544,8 @@ input::placeholder {
 .formGrupo {
     display: flex;
     flex-direction: row;
-    margin: 20px;
+    margin: 25px;
+
 }
 
 .formGrupo img {
@@ -676,7 +682,7 @@ input::placeholder {
 
 .tabelaProdutos th {
     width: 250px;
-    font-size: 20px;
+    font-size: 16px;
     text-transform: uppercase;
     background-color: #E50914;
 }
@@ -693,12 +699,13 @@ input::placeholder {
 }
 
 .adicionarProduto {
-    position: absolute;
+    display: flex;
 }
 
 .novoProduto{
-    position: relative;
-    left: 950px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #cc0000;
     color: white;
     font-size: 30px;
@@ -712,14 +719,29 @@ input::placeholder {
     margin: 30px auto;
 }
 
+#mensagemSucesso {
+    text-align: center;
+    color: rgb(40, 247, 40); 
+    margin-top: 10px;
+}
+
 
 .dataAcesso {
     text-align: center;
     color: white;
 }
 
+.botaoExcluir {
+    margin-left: 30px;
+    width: 20px;
+    height: 20px;
+}
 
-
+.botaoEditar {
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+}
 
 
 

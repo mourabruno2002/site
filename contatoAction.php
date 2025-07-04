@@ -28,28 +28,7 @@
 
     <div class="barraSuperior2"></div>
 
-    <div class="superiorPagina">
-        <div class="logo">
-            <a href="index.html">
-                <img id="logoEmpresa" src="imagens/logoprincipal.png" alt="Logo Figures Brasil">
-            </a>
-        </div>
-
-        <div class="barraNavegacao">
-            <a href="index.html">Home</a>
-            <a href="sobre.html">Sobre</a>
-            <a href="noticias.html" id="noticias">Notícias</a>
-            <a class="active" href="contato.html" id="contato">Contato</a>
-        </div>
-
-        <div class="telefone">
-            <a id="linkwpp" href="https://www.whatsapp.com/?lang=pt_BR" target="_blank">
-                <img id="imgwpp" src="imagens/imagemwpp.png" alt="Logo Whatsapp">
-            </a>
-            <img id="imgTelefone" src="imagens/telefone.png" alt="Imagem Telefone">
-            <h2 id="numeroTelefone">(41) 3333-2222</h2>
-        </div>
-    </div>
+    <?php include('menu.php') ?>
 
     <div class="centroPagina" id="resultado">
         <h2>Dados Recebidos</h2>
@@ -66,74 +45,7 @@
         </div>
     </div>
 
-    <div class="barraInferior2"></div>
-
-    <div class="inferiorPagina">
-
-        <div class="localizacao">
-
-            <div class="imagemLocalizacao">
-                <a href="https://www.google.com/maps" target="_blank">
-                    <img src="imagens/localizacao.png" alt="Localização Loja Física Action Figure">
-                </a>
-            </div>
-
-            <div class="enderecoLocalizacao">
-                <h2>LOCALIZAÇÃO LOJA FÍSICA</h2>
-                <p>Rua Imaculada Conceição, 1155</p>
-                <p>Bairro Prado Velho</p>
-                <p>Curitiba-PR</p>
-                <p>CEP: 80215-901</p>
-            </div>
-        </div>
-
-        <div class="pagamento">
-            <div class="cartaoPagamento">
-                <h2 id="tituloPagamento">FORMAS DE PAGAMENTO</h2>
-                <div class="elo">
-                    <img src="imagens/elo.png" alt="Cartão ELO">
-                    <p>ELO - Crédito/Débito</p>
-                </div>
-
-                <div class="mastercard">
-                    <img src="imagens/mastercard.png" alt="Cartão Mastercard">
-                    <p>MASTER - Crédito/Débito</p>
-                </div>
-
-                <div class="visa">
-                    <img src="imagens/visa.png" alt="Cartão Visa">
-                    <p>VISA - Crédito/Débito</p>
-                </div>
-
-                <div class="amex">
-                    <img src="imagens/amex.png" alt="Cartão AMEX">
-                    <p>AMEX - Crédito/Débito</p>
-                </div>
-
-
-            </div>
-
-            <div class="outrasFormasPagamento">
-                <div class="boleto">
-                    <img src="imagens/boleto.png" alt="Boleto">
-                    <p>Boleto</p>
-                </div>
-
-                <div class="deposito">
-                    <img src="imagens/pix.png" alt="PIX">
-                    <p>PIX</p>
-                </div>
-            </div>
-
-            <div class="cnpjEmail">
-                <p>CNPJ:</p>
-                <p>00.000.000/0001-00</p>
-                <br>
-                <p>E-mail:</p>
-                <p>actionfigure@acfigure.com.br</p>
-            </div>
-        </div>
-    </div>
+    <?php include('rodape.php') ?>
 
     <script src="script/script.js"></script>
 </body>
