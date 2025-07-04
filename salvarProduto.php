@@ -41,7 +41,7 @@ if ($acao === 'cadastrar') {
         VALUES ('$nome', '$descricao', '$preco', '$categoria', '$imagem_nome')";
 
     if ($conn->query($sql) === TRUE) {
-        header("Location: cadastrarProduto.php?sucesso=1");
+        header("Location: listarProduto.php?sucesso=1");
         exit;
     } else {
         echo "<p style='color:red;'>Erro: " . $conn->error . "</p>";

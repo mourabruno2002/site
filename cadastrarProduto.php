@@ -40,10 +40,6 @@
                     <button type="submit" name="acao" value="voltar" class="formVoltarLista" onclick="removerRequired()">Voltar</button>
                 </div>
 
-                <?php if (isset($_GET['sucesso']) && $_GET['sucesso'] == 1): ?>
-                    <p id="mensagemSucesso">Produto cadastrado com sucesso!</p>
-                <?php endif; ?>
-
             </form>
         </div>
     </div>

@@ -16,7 +16,11 @@
 
         <?php if (isset($_GET['sucesso_edicao']) && $_GET['sucesso_edicao'] == 1): ?>
             <p id="mensagemSucesso">Produto atualizado com sucesso!</p>
-            <?php endif; ?>
+        <?php endif; ?>
+
+        <?php if (isset($_GET['sucesso']) && $_GET['sucesso'] == 1): ?>
+            <p id="mensagemSucesso">Produto cadastrado com sucesso!</p>
+        <?php endif; ?>
 
         <div class="painelProdutos">
             <h2>Produtos</h2>
@@ -32,7 +36,7 @@
 
             $sql = "SELECT * FROM produtos ORDER BY id DESC";
             $resultado = $conn->query($sql);
-            
+
             echo "<div class='centroPagina'>";
             echo "<table class='tabelaProdutos'>";
             echo "<tr>
@@ -59,8 +63,6 @@
                         \"><img src='imagens/lixeira.png' class='botaoExcluir'></img></a></td>";
                     echo "</tr>";
                 }
-                
-
             } else {
                 echo "<tr>
                     <td colspan='6' style='text-align:center; padding: 20px;'>Nenhum produto foi encontrado. Cadastre um produto e tente novamente!</td>
@@ -71,13 +73,13 @@
             echo "<form class='adicionarProduto' action='cadastrarProduto.php'><input type='submit' value='+' class='novoProduto' title='Adicionar Produto'></form>";
             echo "</div>";
 
-            
+
             $conn->close();
 
             ?>
         </div>
     </div>
-    
+
     <?php include('rodape.php'); ?>
 
 </body>
