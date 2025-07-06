@@ -1,14 +1,14 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "lojaAction");
-if ($conn->connect_error) {
-    die("A Conexão falhou: " . $conn->connect_error);
-}
+include_once('sessao.php');
+include_once('conectaBD.php');
 
-if (!isset($_GET['id'])) {
-    echo "O ID do produto não informado.";
-    exit;
+if (!isset($_SESSION['login'])) {
+    header('Location: loginForm.php');
+    exit();
 }
+?>
 
+<?php
 $id = $_GET['id'];
 
 $sql = "SELECT * FROM produtos WHERE id = $id";
@@ -37,9 +37,9 @@ $produto = $resultado->fetch_assoc();
     <?php include('menu.php'); ?>
 
     <div class="centroPagina">
-        <h2>Editar Produto</h2>
+        <h2>Edição de Produtos</h2>
         <div class="formPrincipalProduto">
-            <form action="atualizarProduto.php" method="POST" enctype="multipart/form-data" class="formProduto">
+            <form action="editarProduto_exe.php" method="POST" enctype="multipart/form-data" class="formProduto">
                 <input type="hidden" name="id" value="<?= $produto['id'] ?>">
 
                 <label>Nome:</label><br>
@@ -52,7 +52,19 @@ $produto = $resultado->fetch_assoc();
                 <input type="number" name="preco" step="0.01" value="<?= $produto['preco'] ?>" required><br><br>
 
                 <label>Categoria:</label><br>
-                <input type="text" name="categoria" value="<?= $produto['categoria'] ?>"><br><br>
+                <select name="categoria_id" required>
+                    <option value="">Selecione uma categoria</option>
+                    <?php
+                    $sqlCat = "SELECT id, nome FROM categoria ORDER BY nome ASC";
+                    $resCat = $conn->query($sqlCat);
+                    if ($resCat->num_rows > 0) {
+                        while ($cat = $resCat->fetch_assoc()) {
+                            $selected = ($cat['id'] == $produto['categoria_id']) ? "selected" : "";
+                            echo "<option value='" . intval($cat['id']) . "' $selected>" . htmlspecialchars($cat['nome']) . "</option>";
+                        }
+                    }
+                    ?>
+                </select><br><br>
 
                 <label>Imagem atual:</label><br>
                 <img src="imagens/<?= $produto['imagem'] ?>" style="max-width: 100px;"><br><br>

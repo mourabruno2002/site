@@ -58,11 +58,9 @@
             </div>
 
             <div class="cnpjEmail">
-                <p>CNPJ:</p>
-                <p>00.000.000/0001-00</p>
-                <br>
-                <p>E-mail:</p>
-                <p>actionfigure@acfigure.com.br</p>
+                <p>CNPJ: 00.000.000/0001-00</p>
+                <p>E-mail: actionfigure@acfigure.com.br</p>
+                <p>Telefone: (41) 3333-4444</p>
             </div>
         </div>
     </div>

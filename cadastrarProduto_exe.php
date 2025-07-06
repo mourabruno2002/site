@@ -1,14 +1,10 @@
 <?php
+include_once('sessao.php');
+include_once('conectaBD.php');
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "lojaAction";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("A conexão falhou: " . $conn->connect_error);
+if (!isset($_SESSION['login'])) {
+    header('Location: loginForm.php');
+    exit();
 }
 
 $acao = $_POST['acao'] ?? '';
@@ -35,19 +31,26 @@ if ($acao === 'cadastrar') {
     $nome = $_POST["nome"];
     $descricao = $_POST["descricao"];
     $preco = $_POST["preco"];
-    $categoria = $_POST["categoria"];
+    $categoria_id = $_POST["categoria_id"];
 
-    $sql = "INSERT INTO produtos (nome, descricao, preco, categoria, imagem)
-        VALUES ('$nome', '$descricao', '$preco', '$categoria', '$imagem_nome')";
+    if (empty($categoria_id)) {
+        echo "<p style='color:red;'>Por favor, selecione uma categoria válida.</p>";
+        echo "<a href='cadastrarProduto.php'>Voltar</a>";
+        exit;
+    }
 
-    if ($conn->query($sql) === TRUE) {
+    $stmt = $conn->prepare("INSERT INTO produtos (nome, descricao, preco, categoria_id, imagem) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssdss", $nome, $descricao, $preco, $categoria_id, $imagem_nome);
+
+    if ($stmt->execute()) {
         header("Location: listarProduto.php?sucesso=1");
         exit;
     } else {
-        echo "<p style='color:red;'>Erro: " . $conn->error . "</p>";
+        echo "<p style='color:red;'>Erro ao cadastrar: " . $stmt->error . "</p>";
     }
+
+    $stmt->close();
 }
 
 $conn->close();
-
 ?>

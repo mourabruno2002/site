@@ -19,7 +19,7 @@ body {
     height: 125px;
     margin: 0;
     padding: 0;
-    gap: 100px;
+    gap: 250px;
 }
 
 .barraNavegacao {
@@ -74,7 +74,7 @@ body {
     justify-content: end;
     align-items: center;
     gap: 15px;
-    width: 33.33%;
+    width: 10%;
     text-align: right;
     color: #ffffff;
     font-family: "Montserrat", Sans-serif;
@@ -83,7 +83,7 @@ body {
 }
 
 .logo {
-    width: 33.33%;
+    width: 20%;
 }
 
 .barraSuperior2 {
@@ -369,6 +369,10 @@ h2 {
     margin-top: 25px;
 }
 
+.cnpjEmail p {
+    margin-bottom: 40px;
+}
+
 .botaoSaibaMais {
     width: 100%;
     height: 32px;
@@ -581,7 +585,7 @@ input::placeholder {
     border-collapse: collapse;
 }
 
-#dadosTabela th{
+#dadosTabela th {
     width: 175px;
     height: 35px;
     background-color: rgb(34, 34, 34);
@@ -672,38 +676,107 @@ input::placeholder {
     gap: 20px;
 }
 
-.formCadastrar, .formVoltarLista{
+.formCadastrar {
     background-color: #E50914;
     border: 1px solid #E50914;
-    border-radius: 4px;
-    height: 50px;
+    border-radius: 8px;
+    height: 45px;
     width: 50%;
     cursor: pointer;
     font-weight: 700;
+    font-size: 16px;
     color: white;
     margin-top: 20px;
+    transition: background-color 0.3s ease;
 }
 
-.formCadastrar:hover, .formVoltarLista:hover {
+.formCadastrar:hover {
     background-color: #8B0000;
+}
+
+.formVoltarLista {
+    background-color: #444;
+    border: 1px solid #222;
+    border-radius: 8px;
+    height: 45px;
+    width: 50%;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.formVoltarLista:hover {
+    background-color: #666;
+}
+
+select {
+    background-color: #1A1A1A;
+    color: #ffffffdc;
+    border: 2px solid #E50914;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+select:hover,
+select:focus {
+    border-color: #8B0000;
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select::-webkit-inner-spin-button,
+select::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .tabelaProdutos {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-collapse: collapse;
     margin-bottom: 30px;
+    margin-left: 100px;
+    border-collapse: collapse;
+    border: 1px solid #8B0000;
+    width: 90%;
 }
 
-.tabelaProdutos th, .tabelaProdutos tr {
-    border: 1px solid #8B0000;
-    border-collapse: collapse;
+.tabelaProdutos tbody {
+    min-width: 100%;
+}
+
+.tabelaProdutos th,
+.tabelaProdutos tr {
     color: #fff;
 }
 
-.tabelaProdutos tr {
+.tabelaProdutos td {
+    border-bottom: 1px solid #8B0000;
+    border-top: 1px solid #8B0000;
+}
+
+.cabeçalhoProdutos {
+    height: 50px;
+}
+
+.linhasProdutos {
     height: 91px;
+    width: 100%;
     text-align: center;
 }
 
@@ -716,7 +789,7 @@ input::placeholder {
 }
 
 .tabelaProdutos th {
-    width: 250px;
+    width: 300px;
     font-size: 16px;
     text-transform: uppercase;
     background-color: #E50914;
@@ -737,7 +810,7 @@ input::placeholder {
     display: flex;
 }
 
-.novoProduto{
+.novoProduto {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -756,7 +829,7 @@ input::placeholder {
 
 #mensagemSucesso {
     text-align: center;
-    color: rgb(40, 247, 40); 
+    color: rgb(40, 247, 40);
     margin-top: 10px;
 }
 
@@ -778,6 +851,234 @@ input::placeholder {
     height: 20px;
 }
 
+.tituloExcluir {
+    color: #f9b000;
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+}
 
+.cardExclusao {
+    background-color: #1a1a1a;
+    padding: 25px;
+    border: 1px solid #8B0000;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #8B0000;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
 
+}
 
+.conteudoExclusao {
+    flex: 1 1 55%;
+    color: #ccc;
+    font-size: 1.1em;
+    line-height: 2em;
+}
+
+.imagemExclusao {
+    flex: 1 1 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.imagemExclusao img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+}
+
+.botoesExclusao {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.botaoExcluirConfirmar {
+    background-color: #E50914;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.botaoExcluirConfirmar:hover {
+    background-color: #8B0000;
+}
+
+.botaoCancelar {
+    background-color: #444;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 12px 25px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+    width: 120px;
+    font-size: 16px;
+}
+
+.botaoCancelar:hover {
+    background-color: #666;
+    color: #fff;
+}
+
+.barraLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 50px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.barraLogin a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    line-height: 45px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.barraLogin a:hover {
+    background-color: #8B0000;
+}
+
+#botaoSair {
+    width: 100%;
+}
+
+.modalLoginCadastro {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.conteudoModal {
+    position: relative;
+    background-color: #121212;
+    margin: 8% auto;
+    padding: 50px 20px;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: 0 0 20px #E50914;
+    text-align: center;
+    color: #ffffffdc;
+    border: 2px solid #E50914;
+}
+
+.conteudoModal input[type="text"],
+.conteudoModal input[type="password"],
+.conteudoModal input[type="tel"] {
+    background-color: #1A1A1A;
+    border: none;
+    border-bottom: 2px solid #E50914;
+    width: 90%;
+    font-size: 16px;
+    color: #ffffffdc;
+    margin-bottom: 20px;
+    padding: 8px;
+    outline: none;
+}
+
+.conteudoModal input[type="submit"] {
+    background-color: #E50914;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    width: 331px;
+}
+
+.conteudoModal input[type="submit"]:hover {
+    background-color: #8B0000;
+}
+
+.fecharLoginCadastro {
+    position: absolute;
+    height: 20px;
+    top: 8px;
+    right: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #E50914;
+    padding: 4px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.fecharLoginCadastro:hover {
+    background-color: #8B0000;
+}
+
+.modalLoginAltura {
+    min-height: 120px;
+}
+
+.modalCadastroAltura {
+    min-height: 260px;
+}
+
+.mostrar-senha {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    margin: 0;
+}
+
+.mostrar-senha input[type="checkbox"] {
+    margin: 10px;
+    transform: scale(1.2);
+    width: 20px;
+    margin-left: 10px;
+}
+
+#mostrarSenhaCadastro {
+    margin: 0;
+    transform: scale(1.2);
+    width: 20px;
+    margin-left: 10px;
+}
+
+.mostrar-senha label {
+    margin: 0;
+    font-size: 14px;
+    color: #ffffffdc;
+}
